@@ -51,6 +51,57 @@
         aria-label="Search"
       />
     </nav>
+
+    <div
+      class="modal fade"
+      id="Modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="ModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalLabel">Add a Venue</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="venue-name" class="col-form-label"
+                  >Venue Name:</label
+                >
+                <input type="text" class="form-control" id="venue-name" />
+              </div>
+              <div class="form-group">
+                <label for="capacity" class="col-form-label"
+                  >Capacity:</label
+                >
+                <input type="text" id="capacity"></input>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Add venue</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <section class="main">
       <header class="side-bar">
         <nav>
@@ -93,12 +144,18 @@
 
       <section id="info-area">
         <section class="dashboard show">
-          <h3 class="text-white">Welcome Admin,</h3>
+          <h3 class="text-white f-w">Welcome Admin,</h3>
           <h6 class="title text-white pt-3 pb-3">Dashboard</h6>
           <div class="widget-container">
-            <article class="widget">Add a venue</article>
-            <article class="widget">Add discount & Promos</article>
-            <article class="widget">Add a widget</article>
+            <article class="widget">
+              <p>Add a venue</p>
+              <button type="button" class="btn-lg rounded-circle" data-toggle="modal" data-target="#Modal">+</button>
+            </article>
+            <article class="widget">
+              <p>Add discount & Promos</p>
+                <button type="button" class="btn-lg rounded-circle" data-toggle="modal" data-target="#Modal">+</button>
+            </article>
+            <article class="widget"><p>Add a widget</p></article>
           </div>
           <div class="bookings-table">
             <table class="recent-bookings">
@@ -118,28 +175,28 @@
                 <td>Sao.onasanya@gmail.com</td>
                 <td>Waldorf Hall</td>
                 <td>December 13th 2019</td>
-                <td><button disabled="disabled">Approved</button></td>
+                <td><button class='approved'>Approved</button></td>
               </tr>
               <tr>
                 <td>Onasanya Lanre</td>
                 <td>Sao.onasanya@gmail.com</td>
                 <td>Waldorf Hall</td>
                 <td>December 13th 2019</td>
-                <td><button disabled="disabled">Approved</button></td>
+                <td><button class='approved'>Approved</button></td>
               </tr>
               <tr>
                 <td>Onasanya Lanre</td>
                 <td>Sao.onasanya@gmail.com</td>
                 <td>Waldorf Hall</td>
                 <td>December 13th 2019</td>
-                <td><button disabled="disabled">Pending</button></td>
+                <td><button >Pending</button></td>
               </tr>
               <tr>
                 <td>Onasanya Lanre</td>
                 <td>Sao.onasanya@gmail.com</td>
                 <td>Waldorf Hall</td>
                 <td>December 13th 2019</td>
-                <td><button disabled="disabled">Pending</button></td>
+                <td><button >Pending</button></td>
               </tr>
             </table>
           </div>
@@ -172,7 +229,49 @@
           </div>
         </section>
         <section class="enquiries hidden">
-          <div>Enquiries</div>
+          <div>
+             <table class="main-bookings">
+              <caption>
+                <span>Bookings</span>
+                <hr />
+              </caption>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Venue</th>
+                <th>Date</th>
+                <th>Phone</th>
+              </tr>
+              <tr>
+                <td>Onasanya Lanre</td>
+                <td>Sao.onasanya@gmail.com</td>
+                <td>Waldorf Hall</td>
+                <td>December 13th 2019</td>
+                <td>09037482123</td>
+              </tr>
+              <tr>
+                <td>Onasanya Lanre</td>
+                <td>Sao.onasanya@gmail.com</td>
+                <td>Waldorf Hall</td>
+                <td>December 13th 2019</td>
+                <td>09037482123</td>
+              </tr>
+              <tr>
+                <td>Onasanya Lanre</td>
+                <td>Sao.onasanya@gmail.com</td>
+                <td>Waldorf Hall</td>
+                <td>December 13th 2019</td>
+                <td>09037482123</td>
+              </tr>
+              <tr>
+                <td>Onasanya Lanre</td>
+                <td>Sao.onasanya@gmail.com</td>
+                <td>Waldorf Hall</td>
+                <td>December 13th 2019</td>
+                <td>09037482123</td>
+              </tr>
+            </table>
+</div>
         </section>
         <section class="venues hidden">
           <div class="venue">
