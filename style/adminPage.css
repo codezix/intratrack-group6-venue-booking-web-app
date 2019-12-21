@@ -1,0 +1,231 @@
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+.navbar {
+  font-family: "Libre Baskerville", serif;
+  background-color: #202020;
+  width: 100%;
+}
+.navbar-brand {
+  color: #ffd25a !important;
+}
+
+.navbar input:focus {
+  border-radius: 15px;
+  height: 30px;
+  background-color: #3a3a3a;
+  border-color: #3a3a3a;
+  color: #fff;
+}
+
+.navbar input {
+  border-radius: 15px;
+  width: 200px;
+  height: 30px;
+  background-color: #3a3a3a;
+  border-color: #3a3a3a;
+  color: #fff;
+}
+
+.main {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.side-bar {
+  background-color: #202020;
+  min-width: 220px;
+}
+
+.side-bar nav ul {
+  list-style: none;
+  padding-left: 25px;
+}
+
+.menu-heading {
+  color: #707070;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.menu-heading img {
+  width: 25px;
+  height: 25px;
+  border-radius: 40%;
+}
+
+.admin-menu {
+  padding-top: 20px;
+}
+
+.admin-menu li {
+  margin: 35px 0;
+}
+
+.admin-menu li a:any-link {
+  color: #fff;
+}
+
+.logout-btn {
+  width: 130px;
+  border-radius: 4px;
+  background-color: #ffd25a;
+  border-color: #ffd25a;
+  color: #262626;
+}
+
+#info-area {
+  width: 100%;
+}
+
+.dashboard,
+.venues,
+.bookings,
+.enquiries {
+  background-color: #3a3a3a;
+  flex-grow: 1;
+  padding: 40px 40px;
+}
+
+.widget-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.widget {
+  border: 1px solid black;
+  width: 299px;
+  height: 270px;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.bookings-table {
+  overflow-x: scroll;
+}
+
+.recent-bookings {
+  flex-flow: column;
+  margin-top: 30px;
+  background-color: #202020;
+}
+
+.recent-bookings caption,
+.main-bookings caption {
+  caption-side: top;
+  background-color: #202020;
+}
+
+caption hr {
+  background-color: #3a3a3a;
+}
+
+caption span {
+  padding-left: 20px;
+}
+
+th,
+caption {
+  color: #ffd25a;
+}
+
+th,
+td {
+  padding-right: 60px;
+  padding-left: 20px;
+}
+
+td {
+  font-size: 13px;
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+table button {
+  font-size: small;
+  width: 70px;
+  padding: 2px;
+}
+
+.enq-heading,
+.msg-heading {
+  color: #ffd25a;
+  padding: 10px 0px 0px 10px;
+}
+
+.recent-enquiries hr {
+  background-color: #3a3a3a;
+}
+
+.recent-enquiries {
+  margin-top: 50px;
+  width: 400px;
+  height: 370px;
+  background-color: #202020;
+  color: white;
+}
+
+.recent-enquiries img {
+  padding: 20px 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 40%;
+}
+
+.enquiry {
+  display: flex;
+  padding: 10px 10px;
+}
+
+.enquiry hr {
+  border-width: 1px;
+  margin: 0.5em auto;
+}
+
+.enquiry-img {
+  width: 75px;
+}
+
+.enquiry-details {
+  display: flex;
+  flex-grow: 1;
+  margin-left: 10px;
+  flex-direction: column;
+}
+
+.enq-sender {
+  font-weight: 700;
+}
+.enq {
+  font-size: 13px;
+  padding-bottom: 10px;
+}
+
+.enq-date {
+  align-self: flex-end;
+}
+
+.hidden {
+  display: none;
+}
+
+.enquiries,
+.bookings,
+.venues {
+  height: 100vh;
+}
+
+.accept {
+  display: flex;
+}
+
+.btn-success {
+  margin-right: 3px;
+}
+
+.main-bookings {
+  flex-flow: column;
+  background-color: #202020;
+}
