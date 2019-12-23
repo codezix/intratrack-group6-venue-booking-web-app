@@ -1,0 +1,171 @@
+.details{
+    background:#202020;
+    height:25rem;
+   }
+   .carousel{
+   position:relative;
+   }
+   .navbar-toggler div{
+    width: 35px;
+    height:5px;
+    background-color:#ffffff;
+    margin:3px 0;
+     }
+   .carousel-caption{
+   position:absolute;
+   top:12.5rem;
+   left:0.3125rem;
+   display:inline;
+   margin-right:750px;
+   }
+   .carousel-caption button{
+   background:#FFD25A; 
+   }
+   #textvenue{
+  position:absolute;
+  top:50px;
+  left:150px;
+   }
+   .hall{
+    background:#202020;
+    width:31.25rem;
+    height:18.75rem;
+    padding-right:1.5625rem;
+    margin-right:0.3125rem;
+    }
+    #venuename{
+    text-align:center;
+    padding:0.3125rem;
+    font-size:1.25em;
+    }
+    .hall button{
+    background:#FFD25A;
+    margin:0.3125rem 12.5rem;
+    width:6.25rem;
+    }
+    #waldorf{
+    margin-left:8.75rem;
+    }
+    
+   .bg-img{
+   background-image: url('../images/venues.png');
+   background-size:cover;
+   background-position:center;
+   min-height:300px;
+   background-repeat: no-repeat;
+   position: relative;
+   }
+   p,h3{
+   color:#ffffff;
+   margin-left:1.875rem;
+   }
+   h1{
+   display:inline;
+   color:#ffffff;
+   white-space: nowrap;
+   font-size:2.5rem;
+   }
+   #location{
+   font-size:1.5625em;
+   }
+   #booknow{
+   background:#FFD25A;
+   color:#202020;
+   margin:1.5625rem 37.5rem;
+   height:2.5rem;
+   }
+   .clients{
+   background:#828282;
+   color:#ffffff;
+   height:25rem;
+   position: relative;
+   }
+   #logo{
+    position: absolute;
+    left:15.625rem;
+    top:3.125rem;
+   }
+   #logos{
+    position: absolute;
+    left:37.5rem;
+    top:4.375rem;
+   }
+   #icon{
+    position: absolute;
+    left:61.875rem;
+    top:3.125rem;
+   }
+   .testimonials{
+   background:#202020;
+   height:25rem;
+   color:#ffffff;
+   position: relative;
+   }
+   #info{
+    position:absolute;
+    top:12.5rem;
+   }
+   #name{
+    position:absolute;
+    top:16.25rem;
+   }
+   .enquiry{
+   background:#828282;
+   height:25rem;
+   color:#ffffff;
+   }
+   .container{
+   display: flex;
+   flex-direction: row;
+   justify-content:space-around;
+   margin:0.3125rem;
+   flex-wrap: wrap;
+   }
+   
+   #clients{
+   margin-left:3.125rem;
+   }
+   .form{
+   background-color:#3A3A3A;
+   width:31.25rem;
+   height:9.375rem;
+   margin:2.5rem 25rem;
+   }
+   input{
+   background-color:#3A3A3A;
+   color:#828282;
+   border:none;
+   }
+   #enquire{
+   background-color:#FFD25A;
+   margin:0.125rem 37.5rem;
+   color:#262626;
+   }
+   footer {
+   background-color: #202020;
+   color: #C4C4C4;
+   bottom: 0;
+   }
+   #imge{
+    margin:1.25rem 3.125rem;
+   }
+   #images{
+    margin:3.4375rem 2.5rem;
+   }
+   .info{
+    margin:0.625rem 3.125rem;
+   }
+    #hrtext{
+     width:0.625rem;
+     margin:0.1875rem 0.9375rem;
+     display:inline-block;
+     border:2px solid #ffffff;
+    }          
+   @media only screen and (max-width: 425px) {
+   #booknow{
+   margin-left:50px;
+   height:30px;
+   width:100px;
+   }
+   }
+   
