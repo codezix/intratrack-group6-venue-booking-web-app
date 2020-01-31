@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Literata&display=swap" rel="stylesheet">
+
+
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    .navbar-brand {
+        color: #FFD25A;
+    }
+    
+    html,
+    body {
+        /* font-family: 'Literata', serif; */
+        width: 100%;
+        height: auto;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+        background-color: #3A3A3A;
+    }
+    
+    .navbar {
+        background: #202020;
+        opacity: 1;
+        width: 100%;
+    }
+    
+    a {
+        color: #FFFFFF;
+    }
+    
+    a:hover {
+        color: #FFD25A;
+    }
+    
+    ul {
+        margin: 10px 5px;
+    }
+    
+    li {
+        padding: 10px 5px;
+    }
+    
+    #admin {
+        margin-left: 100px;
+    }
+    
+    a:active {
+        color: #FFD25A;
+    }
+    
+    .navbar-toggler {
+        background: #FFD25A;
+    }
+    
+    .social-link {
+        width: 30px;
+        height: 30px;
+        border: 1px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #3A3A3A;
+        border-radius: 50%;
+        transition: all 0.3s;
+        font-size: 0.9rem;
+    }
+    
+    .social-link:hover,
+    .social-link:focus {
+        background: #ddd;
+        text-decoration: none;
+        color: #FFD25A;
+    }
+    
+    footer {
+        background-color: #202020;
+        color: #C4C4C4;
+        bottom: 0;
+    }
+</style>
+
+<body>
+    <header>
+        <div>
+
+            <!-- class="container" -->
+            <div style="width: 100%">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <span class="navbar-brand ml-5 h1">LANCE EVENTS</span>
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                            <span class="navbar-toggler-icon"></span>
+                                        </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="venue.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Venues
+                                                    </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Waldorf hall</a>
+                                            <a class="dropdown-item" href="#">Benson Avenue</a>
+                                            <a class="dropdown-item" href="#">Beach view</a>
+
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="aboutUs.html">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="contact.html">Contact Us</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="signin.html" id="admin">Admin</a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+    </header>
+
+
+    <div class="container py-5">
+        <div class="row text-center text-white">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-4">Meet The Team</h1>
+                <!-- <p class="lead mb-0">Using Bootstrap 4 grid and utilities, create a nice team page.</p>
+                <p class="lead">Snippet by
+                    <a href="https://bootstrapious.com/snippets" class="text-white">
+                        <u>Bootstrapious</u></a> -->
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+
+
+    <div class="container ">
+        <div class="row text-center text-black">
+
+            <!-- Team item -->
+            <div class="col-xl-4 col-sm-6 mb-5 ">
+                <div class=" rounded shadow-sm py-5 px-4" style="background-color: #A7A7A7"><img src="" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">Anita Odiboh</h5><span class="small text-uppercase text-muted">UI/UX Designer</span>
+                    <ul class="social mb-0 list-inline mt-3">
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End -->
+
+            <!-- Team item -->
+            <div class="col-xl-4 col-sm-6 mb-5">
+                <div class=" rounded shadow-sm py-5 px-4" style="background-color: #A7A7A7"><img src="" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">Olanrewaju Onasanya</h5><span class="small text-uppercase text-muted">UI/UX Designer</span>
+                    <ul class="social mb-0 list-inline mt-3">
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End -->
+
+            <!-- Team item -->
+            <div class="col-xl-4 col-sm-6 mb-5">
+                <div class=" rounded shadow-sm py-5 px-4" style="background-color: #A7A7A7"><img src="" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">Emamuzo Omokiti</h5><span class="small text-uppercase text-muted">Frontend Developer</span>
+                    <ul class="social mb-0 list-inline mt-3">
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End -->
+            <!-- Team item -->
+            <div class="col-xl-4 col-sm-6 mb-5">
+                <div class=" rounded shadow-sm py-5 px-4" style="background-color: #A7A7A7"><img src="" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">Chukwunomso Ikem</h5><span class="small text-uppercase text-muted">Software Engineer (Full Stack)</span>
+                    <ul class="social mb-0 list-inline mt-3">
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End -->
+
+            <!-- Team item -->
+            <div class="col-xl-4 col-sm-6 mb-5">
+                <div class=" rounded shadow-sm py-5 px-4" style="background-color: #A7A7A7"><img src="" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">Chimdi Nzenwa</h5><span class="small text-uppercase text-muted">Software Engineer (Full Stack)</span>
+                    <ul class="social mb-0 list-inline mt-3">
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End -->
+        </div>
+    </div>
+
+
+    <footer class="page-footer font-small mdb-color pt-4 ">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left ">
+
+            <!-- Footer links -->
+            <div class="row text-center text-md-left mt-3 pb-3 ">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 ">
+                    <h6 class=" mb-4 font-weight-bold ">Keep In Touch</h6>
+                    <p><small>Get exclusive update straight in your inbox</small>
+                        <form class="form-inline ">
+                            <input class="form-control mr-sm-2 form-control-sm " type="email " placeholder="email " aria-label="email " style="border-radius: 0; width: 60%; margin-right: 10px;background-color: #3A3A3A; ">
+                            <button class="btn my-2 my-sm-0 btn-sm " style="border-radius: 0; font-weight: 700;background-color: #FFD25A; "><i class="fa fa-arrow-right "  style=" width: 40px "></i></button>
+                        </form>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <hr class="w-100 clearfix d-md-none ">
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                    <h6 class=" mb-4 font-weight-bold ">Venues</h6>
+                    <p>
+                        <a href="#! "><small>Waldorf hall</small></a>
+                    </p>
+                    <p>
+                        <a href="#! "><small>Benson Avenue</small></a>
+                    </p>
+                    <p>
+                        <a href="#! "><small>Beach view</small></a>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="w-100 clearfix d-md-none ">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                    <h6 class=" mb-4 font-weight-bold ">About</h6>
+                    <p>
+                        <a href="#! "><small>Get to know (FAQ)</small></a>
+                    </p>
+                    <p>
+                        <a href="team.html"><small> Meet the team</small></a>
+                    </p>
+
+                </div>
+
+                <!-- Grid column -->
+                <hr class="w-100 clearfix d-md-none ">
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 ">
+                    <h6 class=" mb-4 font-weight-bold ">Contact us</h6>
+                    <!-- <h6 class="text-uppercase mb-4 font-weight-bold ">Contact us</h6> -->
+                    <p style="color:#979797 ">
+                        <i class="fa fa-phone "></i> &nbsp;<a href="tel:234000000000 "><small>+234 000 000 000</small></a></p>
+                    <p style="color:#979797 ">
+                        <i class="fa fa-envelope "></i>&nbsp;<a href="mailto:contact@lanceevent.com "><small>info@gmail.com</small></a></p>
+                    <p style="color:#979797 ">
+                        <i class="fa fa-map-marker "></i>&nbsp;<small>Stutern fola jinadu, gbagada lagos</small></p>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Footer links -->
+
+            <hr>
+
+            <!-- Grid row -->
+            <div class="row d-flex align-items-center " style="border-top: 1px solid #707070; padding-top: 15px ">
+
+                <!-- Grid column -->
+                <div class="col-md-7 col-lg-8 ">
+
+                    <!--Copyright-->
+                    <p class="text-center text-md-left ">
+                        <small>© Lance Event Ltd. All rights reserved</small>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-5 col-lg-4 ml-lg-0 align-items-center ">
+
+                    <!-- Social buttons -->
+                    <div class="text-center text-md-left ">
+                        <ul class="list-unstyled list-inline ">
+                            <li class="list-inline-item ">
+                                <a class="btn-floating btn-sm rgba-white-slight mx-1 ">
+                                    <!-- <i class="fab fa-facebook-f "></i> -->
+                                    <i class="fa fa-facebook-square " style="font-size:24px;color:#646464 "></i>
+                                    <!-- <i class="fab fa-facebook " ></i> -->
+                                </a>
+                            </li>
+                            <li class="list-inline-item ">
+                                <a class="btn-floating btn-sm rgba-white-slight mx-1 ">
+                                    <i class="fa fa-linkedin-square " style="font-size:24px;color:#646464 "></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item ">
+                                <a class="btn-floating btn-sm rgba-white-slight mx-1 ">
+                                    <!-- <i class="fab fa-google-plus-g "></i> -->
+                                    <i class="fa fa fa-google-plus-square " style="font-size:24px;color:#646464 "></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item ">
+                                <a class="btn-floating btn-sm rgba-white-slight mx-1 ">
+                                    <i class="fa fa-twitter-square " style="font-size:24px;color:#646464 "></i>
+                                    <!-- fab fa-linkedin-in -->
+
+                                </a>
+                            </li>
+                            <!-- <li class="list-inline-item ">
+                                <a class="btn-floating btn-sm rgba-white-slight mx-1 ">
+                                    <i class="fa fa fa-youtube-play " style="font-size:24px;color:#646464 "></i>
+
+
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+    </footer>
+    <!-- Footer -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js " integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin=" anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+    <script src="contact.js"></script>
+</body>
+
+</html>
