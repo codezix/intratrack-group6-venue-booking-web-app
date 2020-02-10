@@ -63,13 +63,19 @@
     }
 
     a:active {
-        color: #FFD25A;
+    color: #FFD25A;
     }
 
     .navbar-toggler {
-        background: #FFD25A;
+    background: #FFD25A;
     }
-
+    
+    .navbar-toggler div{
+     width: 35px;
+     height:3px;
+     background-color:#ffffff;
+     margin:3px 0;
+     }
     /* @media only screen and (max-width: 425px) {
         #admin {
             margin-left: 0px;
@@ -96,7 +102,11 @@
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                                 aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
+                                <span class="navbar-toggler-icon">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                                 <ul class="navbar-nav ml-auto">
@@ -342,9 +352,11 @@
         </footer>
         <!-- Footer -->
         </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+        
     </body>
 
 </html>

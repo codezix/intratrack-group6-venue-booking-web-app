@@ -5,12 +5,7 @@
    .carousel{
    position:relative;
    }
-   .navbar-toggler div{
-    width: 35px;
-    height:5px;
-    background-color:#ffffff;
-    margin:3px 0;
-     }
+   
    .carousel-caption{
    position:absolute;
    top:12.5rem;
@@ -181,9 +176,62 @@
     }          
    @media only screen and (max-width: 425px) {
    #booknow{
-   margin-left:50px;
-   height:30px;
-   width:100px;
+   margin-left:3.125rem;
+   height:1.875rem;
+   width:6.25rem;
    }
-   }
+   .carousel-caption{
+    position:absolute;
+    top:1.0rem;
+    left:0.3125rem;
+    display:inline;
+    margin-right:6.25rem;
+    font-size:1.25em;
+    }
+    .carousel-caption button{
+    background:#FFD25A; 
+    border:none;
+    margin-top:2px;
+    height:3.0rem;
+    width:7.25rem;
+ 
+    }
+    .carousel-caption span{
+     color:#D2D2D2;
+     font-size:large;
+     top:6.5625rem;
+     position:absolute;
+    }
+    #location{
+    font-size:1.5625em;
+    color:#D2D2D2;
+    }
+    h1{
+    display:inline;
+    color:#ffffff;
+    white-space: nowrap;
+    font-size:1.0rem;
+    }
+   #name{
+  position:absolute;
+  top:16.25rem;
+  left:1.0rem;
+  }
+  .enquiry p{
+  margin-left:0.3125rem;
+  color:#ffffff;
+  } 
+ .form{
+  margin-left:0.625rem;
+  }
+#enquire{
+margin:0.1875rem 9.375rem;
+}     
+#waldorf{
+margin-left:0rem;
+  }
+ .hall p{
+ margin:0.3rem;
+ }
+}
    
