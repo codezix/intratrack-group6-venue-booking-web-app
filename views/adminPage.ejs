@@ -32,13 +32,13 @@
       href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/adminPage.css" />
+    <link rel="stylesheet" href="/css/adminPage.css" />
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <script src="../public/js/adminPage.js"></script>
+    <script src="/js/adminPage.js"></script>
     <title>AdminPage</title>
   </head>
   <body>
@@ -136,7 +136,7 @@
             </li>
 
             <li>
-              <a href='/auth/logout' class="logout-btn">Logout</a>
+              <a href='/logout' class="logout-btn">Logout</a>
             </li>
           </ul>
         </nav>
@@ -144,7 +144,7 @@
 
       <section id="info-area">
         <section class="dashboard show">
-          <h3 class="text-white f-w">Welcome Admin,</h3>
+          <h3 class="text-white f-w">Welcome <%= locals.user.email %>,</h3>
           <h6 class="title text-white pt-3 pb-3">Dashboard</h6>
           <div class="widget-container">
             <article class="widget">
@@ -277,7 +277,7 @@
           <div class="venue">
             <div class="card bg-dark text-white" style="width: 18rem">
               <img
-                src="./img/white-fabric-loveseat-with-two-flower-centerpieces-on-the-2306286@2x.png"
+                src="/images/white-fabric-loveseat-with-two-flower-centerpieces-on-the-2306286@2x.png"
                 class="card-img-top"
                 alt="Waldorf"
               />

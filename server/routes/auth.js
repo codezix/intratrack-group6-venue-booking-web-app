@@ -38,14 +38,19 @@ router.get("/callback", function(req, res, next) {
       const returnTo = req.session.returnTo;
       delete req.session.returnTo;
 
-      res.redirect(returnTo || "/");
+      //check if Admin
+      console.log(req.user.isAdmin);
+      if (!req.user.isAdmin) {
+        res.redirect(returnTo || "/");
+      } else {
+        res.redirect("/admin");
+      }
     });
   })(req, res, next);
 });
 
 // Perform session logout and redirect to homepage
 router.get("/logout", (req, res) => {
-  console.log(req.user);
   req.logout();
 
   var returnTo = req.protocol + "://" + req.hostname;

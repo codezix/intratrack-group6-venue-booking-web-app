@@ -5,9 +5,9 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const passportSetup = require("./server/config/passport-setup");
-const userInViews = require("./server/lib/middleware/userInViews");
 const routes = require("./server/routes");
 const authRouter = require("./server/routes/auth");
+const userInViews = require("./server/lib/middleware/userInViews");
 // const indexRouter = require("./server/routes/index");
 // const usersRouter = require("./server/routes/users");
 dotenv.config();
@@ -19,7 +19,7 @@ const port = process.env.PORT || 4000;
 //set view engine
 app.set("view engine", "ejs");
 
-//config express-session
+//express-session config
 const sess = {
   secret: process.env.SESSION_SECRET,
   cookie: {},
@@ -53,14 +53,14 @@ db.once("open", () => {
 app.use(cors());
 app.use(require("morgan")("dev"));
 app.use(express.static("public"));
-app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(session(sess));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(userInViews());
+app.use("/", authRouter);
 routes(app);
-app.use("/auth", authRouter);
 
 app.listen(port, () => {
   console.log(`server running on http://localhost:${port}`);
