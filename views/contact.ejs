@@ -98,50 +98,76 @@
 
 <body>
     <header>
-        <div>
 
             <!-- class="container" -->
             <div style="width: 100%">
 
                 <div class="row">
                     <div class="col-md-12">
-                        <nav class="navbar navbar-expand-lg">
-                            <span class="navbar-brand ml-5 h1">LANCE EVENTS</span>
+           <nav class="navbar navbar-expand-lg">
+              <span class="navbar-brand ml-5 h1">LANCE EVENTS</span>
 
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                                    </li>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+                <div></div>
+                <div></div>
+                <div></div>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/">
+                      Home<span class="sr-only">(current)</span>
+                    </a>
+                  </li>
 
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="venue.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Venues
-                                            </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="#">Waldorf hall</a>
-                                            <a class="dropdown-item" href="#">Benson Avenue</a>
-                                            <a class="dropdown-item" href="#">Beach view</a>
-
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="aboutUs.html">About Us</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">Contact Us</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="signin.html" id="admin">Admin</a>
-                                    </li>
-
-                                </ul>
-
-                            </div>
-                        </nav>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      id="navbarDropdownMenuLink"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Venues
+                    </a>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="navbarDropdownMenuLink"
+                    >
+                      <a class="dropdown-item" href="/venue">Waldorf hall</a>
+                      <a class="dropdown-item" href="/venue">Benson Avenue</a>
+                      <a class="dropdown-item" href="/venue">Beach view</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/aboutUs">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact Us</a>
+                  </li>
+                  <% if (user)  {%>
+                  <li class="nav-item ">
+                   <a class="nav-link" href="/auth/logout" id="login">Logout</a>
+                  </li>
+                   <%} else{%>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="/auth/login" id="login">Login</a> 
+                   </li>            
+                    <%}%>
+      
+                </ul>
+              </div>
+            </nav>
 
                     </div>
                 </div>
@@ -155,6 +181,7 @@
 
                 <p>
                     <h1>Contact Us</h1>
+                
                 </p>
             </div>
             <div class="col-md-6 clearfix text-center" style="width:auto; padding-top: 20px  "><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.7824540500296!2d3.3747852140180297!3d6.549128895263198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8d9ef7bf6fc7%3A0xe0226d07d751a9f5!2sFola%20Jinadu%20Cres%2C%20Pedro%2C%20Lagos!5e0!3m2!1sen!2sng!4v1576270631395!5m2!1sen!2sng"
