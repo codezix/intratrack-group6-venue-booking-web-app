@@ -1,8 +1,9 @@
 module.exports = () => {
   return function(req, res, next) {
-    req.user.isAdmin
-      ? next()
-      : res.json({ message: `Not authorized for user` });
-    
+    if (req.user.isAdmin) {
+      return next();
+    }
+    req.session.returnTo = req.originalUrl;
+    res.redirect("/login");
   };
 };

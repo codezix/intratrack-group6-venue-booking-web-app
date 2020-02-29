@@ -6,17 +6,16 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 passport.serializeUser((user, done) => {
-  console.log("--------------Serializing----------");
+  console.log("-------------Serializing-----------");
   done(null, user.id);
 });
 
 passport.deserializeUser((id, done) => {
-  console.log("--------------Deserializing----------");
-  User.findById(id)
-    .then(user => {
-      done(null, user);
-    })
-    .catch(err => console.log(err));
+  console.log("------------Deserializing----------");
+
+  User.findById(id).then(user => {
+    done(null, user);
+  });
 });
 
 const strategy = new Auth0Strategy(
@@ -31,20 +30,26 @@ const strategy = new Auth0Strategy(
     // extraParams.id_token has the JSON Web Token
     // profile has all the information from the user
 
+    //set default role to user
     let role = "user";
 
+    //if role from auth0 is admin set role as admin
     if (profile._json["http://localhost:4000/role"]) {
       role = profile._json["http://localhost:4000/role"][0];
     }
 
     console.log(role);
+
+    //Find User or create New User in MongoDB
     User.findOne({ authId: profile.id }).then(currentUser => {
       if (currentUser) {
+        console.log(currentUser.email);
         done(null, currentUser);
       } else {
         const userDetails = {
           email: profile.displayName,
           authId: profile.id
+          // username: profile.name
         };
 
         if (role === "admin") {
@@ -52,7 +57,7 @@ const strategy = new Auth0Strategy(
         }
 
         new User(userDetails).save().then(newUser => {
-          console.log(newUser);
+          console.log(newUser.email);
           done(null, newUser);
         });
       }

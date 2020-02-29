@@ -1,12 +1,11 @@
 // routes/auth.js
-
-var express = require("express");
-var router = express.Router();
-var passport = require("passport");
-var dotenv = require("dotenv");
-var util = require("util");
-var url = require("url");
-var querystring = require("querystring");
+const express = require("express");
+const router = express.Router();
+const passport = require("passport");
+const dotenv = require("dotenv");
+const util = require("util");
+const url = require("url");
+const querystring = require("querystring");
 
 dotenv.config();
 

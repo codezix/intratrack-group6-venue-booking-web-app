@@ -7,12 +7,12 @@ const passport = require("passport");
 const passportSetup = require("./server/config/passport-setup");
 const routes = require("./server/routes");
 const authRouter = require("./server/routes/auth");
+const bookRouter = require("./server/routes/booking");
+const enquireRouter = require("./server/routes/enquiry");
 const userInViews = require("./server/lib/middleware/userInViews");
-// const indexRouter = require("./server/routes/index");
-// const usersRouter = require("./server/routes/users");
-dotenv.config();
 
 //Initiate our app
+dotenv.config();
 const app = express();
 const port = process.env.PORT || 4000;
 
@@ -72,6 +72,8 @@ app.use(session(sess));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(userInViews());
+app.use("/enqr", enquireRouter);
+app.use("/book", bookRouter);
 app.use("/auth", authRouter);
 routes(app);
 

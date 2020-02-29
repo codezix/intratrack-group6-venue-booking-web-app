@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const BookingsSchema = new Schema(
+const BookingSchema = new Schema(
   {
     eventCenter: String,
     email: {
@@ -12,6 +12,9 @@ const BookingsSchema = new Schema(
     phone: {
       type: Number,
       trim: true
+    },
+    reservationDate: {
+      type: Date
     }
   },
   {
@@ -19,5 +22,5 @@ const BookingsSchema = new Schema(
   }
 );
 
-const Booking = mongoose.model("Booking", BookingsSchema);
+const Booking = mongoose.model("Booking", BookingSchema);
 module.exports = Booking;
