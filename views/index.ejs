@@ -157,22 +157,23 @@
                   <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact Us</a>
                   </li>
-                  <% if (user)  {%>
+                  <% if (user) {%>
                   <li class="nav-item ">
-                   <a class="nav-link" href="/logout" id="login">Logout</a>
+                    <a class="nav-link" href="/auth/logout" id="login"
+                      >Logout, <span id="user"><%= locals.user.email%></span></a
+                    >
                   </li>
-                   <%} else{%>
-                    <li class="nav-item ">
-                      <a class="nav-link" href="/login" id="login">Login</a> 
-                   </li>            
-                    <%}%>
-      
+                  <%} else{%>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/auth/login" id="login">Login</a>
+                  </li>
+                  <%}%>
                 </ul>
               </div>
             </nav>
+          </div>
         </div>
       </div>
-    </div>
     </header>
 
     <div class="row">
@@ -464,7 +465,7 @@
                     <i
                       class="fa fa-facebook-square "
                       style="font-size:24px;color:#646464 "
-                    ></%>
+                    ></i>
                     <!-- <i class="fab fa-facebook " ></i> -->
                   </a>
                 </li>
@@ -515,6 +516,5 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src=''></script>
   </body>
 </html>

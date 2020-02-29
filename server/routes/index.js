@@ -1,21 +1,22 @@
+const checkAdmin = require("../lib/middleware/checkAdmin");
 module.exports = app => {
   app.get("/", (req, res) => {
-    res.render("index", { user: req.user });
+    res.render("index");
   });
 
   app.get("/venue", (req, res) => {
-    res.render("venue", { user: req.user });
+    res.render("venue");
   });
 
   app.get("/aboutUs", (req, res) => {
-    res.render("aboutUs", { user: req.user });
+    res.render("aboutUs");
   });
 
   app.get("/contact", (req, res) => {
-    res.render("contact", { user: req.user });
+    res.render("contact");
   });
 
-  app.get("/admin", (req, res) => {
-    res.render("adminPage", { user: req.user });
+  app.get("/admin", checkAdmin(), (req, res) => {
+    res.render("adminPage");
   });
 };

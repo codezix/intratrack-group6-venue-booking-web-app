@@ -33,6 +33,10 @@
     <title>About Us</title>
   </head>
   <style>
+    #user {
+      margin-right: 3px;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -164,11 +168,13 @@
                   </li>
                   <% if (user) {%>
                   <li class="nav-item ">
-                    <a class="nav-link" href="/logout" id="login">Logout</a>
+                    <a class="nav-link" href="/auth/logout" id="login"
+                      >Logout, <span id="user"><%= locals.user.email%></span></a
+                    >
                   </li>
                   <%} else{%>
                   <li class="nav-item ">
-                    <a class="nav-link" href="/login" id="login">Login</a>
+                    <a class="nav-link" href="/auth/login" id="login">Login</a>
                   </li>
                   <%}%>
                 </ul>

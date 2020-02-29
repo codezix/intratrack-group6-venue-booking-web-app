@@ -38,12 +38,12 @@ router.get("/callback", function(req, res, next) {
       const returnTo = req.session.returnTo;
       delete req.session.returnTo;
 
-      //check if Admin
-      console.log(req.user.isAdmin);
-      if (!req.user.isAdmin) {
-        res.redirect(returnTo || "/");
-      } else {
+      //check if Admin and redirect to admin page
+      if (req.user.isAdmin) {
         res.redirect("/admin");
+      } else {
+        //else redirect to index page
+        res.redirect(returnTo || "/");
       }
     });
   })(req, res, next);

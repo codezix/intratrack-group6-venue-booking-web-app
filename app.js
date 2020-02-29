@@ -37,6 +37,19 @@ if (app.get("env") === "production") {
   // app.set('trust proxy', 1);
 }
 
+/**
+ * Error Handler.
+ */
+if (process.env.NODE_ENV === "development") {
+  // only use in development
+  app.use(errorHandler());
+} else {
+  app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).send("Server Error");
+  });
+}
+
 //Configure Mongoose
 mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
@@ -59,7 +72,7 @@ app.use(session(sess));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(userInViews());
-app.use("/", authRouter);
+app.use("/auth", authRouter);
 routes(app);
 
 app.listen(port, () => {
