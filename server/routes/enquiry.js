@@ -6,9 +6,11 @@ const Enquiry = require("../models/enquiry-model");
 router.post("/postEnquiry", (req, res, next) => {
   const { email, subject, enquiry } = req.body;
   new Enquiry({
+    firstName,
+    lastName,
     email: req.user.email || email,
-    subject: subject,
-    enquiry: enquiry,
+    subject,
+    enquiry,
     enquiryDate: new Date()
   })
     .save()
