@@ -4,17 +4,17 @@ const { Schema } = mongoose;
 const EnquirySchema = new Schema({
   email: {
     type: String,
+    required: true,
     trim: true
   },
-  phone: {
-    type: Number,
-    trim: true
-  },
+
+  subject: String,
+
+  enquiry: String,
+
   enquiryDate: {
     type: Date
-  },
-  subject: String,
-  enquiry: String
+  }
 });
 
 const Enquiry = mongoose.model("Enquiry", EnquirySchema);

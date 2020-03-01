@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const secured = require("./server/lib/middleware/secured");
+const secured = require("../lib/middleware/secured");
 const checkAdmin = require("../lib/middleware/checkAdmin");
 const Booking = require("../models/booking-model");
 

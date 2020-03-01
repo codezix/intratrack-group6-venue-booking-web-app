@@ -1,16 +1,25 @@
 const express = require("express");
 const router = express.Router();
-const secured = require("../lib/middleware/secured");
 const checkAdmin = require("../lib/middleware/checkAdmin");
 const Enquiry = require("../models/enquiry-model");
 
-router.post("/postEnquiry", secured(), (req, res, next) => {
-  const { phone } = req.body;
+router.post("/postEnquiry", (req, res, next) => {
+  const { email, subject, enquiry } = req.body;
   new Enquiry({
-    email: req.user.email,
-    phone,
+    email: req.user.email || email,
+    subject: subject,
+    enquiry: enquiry,
     enquiryDate: new Date()
-  }).save();
+  })
+    .save()
+    .then(() => {
+      res
+        .status(200)
+        .json({ bookingResponse: "We will reply you through email! Thanks!" });
+    })
+    .catch(err =>
+      res.status(400).json({ error: "Bad request to /postEnquiry" })
+    );
 });
 
 router.get("/recentEnquiries", checkAdmin(), (req, res, next) => {
@@ -18,7 +27,7 @@ router.get("/recentEnquiries", checkAdmin(), (req, res, next) => {
     .sort({ _id: -1 })
     .limit(10)
     .then(enquiries => {
-      res.json({
+      res.status(200).json({
         recentEnquiries: enquiries
       });
     });
@@ -29,7 +38,7 @@ router.get("/allEnquiries", checkAdmin(), (req, res, next) => {
     .sort({ _id: 1 })
     .limit(10)
     .then(enquiries => {
-      res.json({
+      res.status(200).json({
         allEnquiries: enquiries
       });
     });
