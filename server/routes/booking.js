@@ -5,8 +5,17 @@ const checkAdmin = require("../lib/middleware/checkAdmin");
 const Booking = require("../models/booking-model");
 
 router.post("/postBooking", secured(), (req, res, next) => {
-  const { eventCentre, phone, date } = req.body;
-  const dateTaken = Booking.findOne({ date: newDate(date) });
+  const {
+    firstName,
+    lastName,
+    eventCentre,
+    phone,
+    reservationDate,
+    startTime,
+    endTime
+  } = req.body;
+
+  const dateTaken = Booking.findOne({ date: date });
 
   if (dateTaken) {
     res.json({
@@ -15,9 +24,14 @@ router.post("/postBooking", secured(), (req, res, next) => {
   } else {
     new Booking({
       email: req.user.email,
-      eventCentre: eventCentre,
-      phone: phone,
-      date: new Date(date)
+      firstName,
+      lastName,
+      phone,
+      eventCentre,
+      reservationDate,
+      startTime,
+      endTime,
+      createdAt: new Date()
     }).save();
   }
 });
