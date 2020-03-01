@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lance Events</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Literata&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .navbar-brand {
+      color: #ffd25a;
+    }
+
+    html,
+    body {
+      /* font-family: 'Literata', serif; */
+      width: 100%;
+      height: auto;
+      margin: 0px;
+      padding: 0px;
+      overflow-x: hidden;
+      background-color: #3a3a3a;
+    }
+
+    .navbar {
+      background: #202020;
+      opacity: 1;
+      width: 100%;
+    }
+
+    a {
+      color: #ffffff;
+    }
+
+    a:hover {
+      color: #ffd25a;
+    }
+
+    ul {
+      margin: 10px 5px;
+    }
+
+    li {
+      padding: 10px 5px;
+    }
+
+    #admin {
+      margin-left: 100px;
+    }
+
+    a:active {
+      color: #ffd25a;
+    }
+
+    .navbar-toggler {
+      background: #ffd25a;
+    }
+    .navbar-toggler div {
+      width: 35px;
+      height: 5px;
+      background-color: #ffffff;
+      margin: 3px 0;
+    }
+    /* @media only screen and (max-width: 425px) {
+        #admin {
+            margin-left: 0px;
+        }
+    } */
+
+    footer {
+      background-color: #202020;
+      color: #c4c4c4;
+      bottom: 0;
+    }
+  </style>
+
+  <body>
+    <header>
+      <!-- class="container" -->
+      <div style="width: 100%">
+        <div class="row">
+          <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg">
+              <span class="navbar-brand ml-5 h1">LANCE EVENTS</span>
+
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+                <div></div>
+                <div></div>
+                <div></div>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/">
+                      Home<span class="sr-only">(current)</span>
+                    </a>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      id="navbarDropdownMenuLink"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      href="/venue"
+                    >
+                      Venues
+                    </a>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="navbarDropdownMenuLink"
+                    >
+                      <a class="dropdown-item" href="/venue">Waldorf hall</a>
+                      <a class="dropdown-item" href="/venue">Benson Avenue</a>
+                      <a class="dropdown-item" href="/venue">Beach view</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/aboutUs">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact Us</a>
+                  </li>
+                  <% if (user) {%>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/auth/logout" id="login"
+                      >Logout, <span id="user"><%= locals.user.email%></span></a
+                    >
+                  </li>
+                  <%} else{%>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/auth/login" id="login">Login</a>
+                  </li>
+                  <%}%>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div
+          id="carouselExampleSlidesOnly"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="images/waldorf .png"
+                class="d-block w-100"
+                alt="waldorf hall"
+              />
+              <div class="carousel-caption ">
+                <h1 id="caption">Waldorf Hall</h1>
+                <p id="location">Lekki</p>
+                <p>Lagos,Nigeria</p>
+                <button>Book Now</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/event.jpg"
+                class="d-block w-100"
+                alt="Benson Avenue Hall"
+              />
+              <div class="carousel-caption ">
+                <h1 id="caption">Benson Avenue Hall</h1>
+                <p id="location">Lekki</p>
+                <p>Lagos,Nigeria</p>
+                <button>Book Now</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/beach view.jpg"
+                class="d-block w-100"
+                alt="Beach View Hall"
+              />
+              <div class="carousel-caption ">
+                <h1 id="caption">Beach View Hall</h1>
+                <p id="location">Lekki</p>
+                <p>Lagos,Nigeria</p>
+                <button>Book Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 details">
+        <h3>Events</h3>
+        <br />
+        <p>
+          We at LANCE EVENTS provide the best event centres in Nigeria.Our event
+          centres are fully equipped with amenties and state of the art
+          technologies to help capture<br />
+          your best moments along with our set furnitures that help set the
+          ambience you seek
+        </p>
+        <button id="booknow" href="venue.html">Book Now</button>
+      </div>
+    </div>
+    <div class="row clients">
+      <h3 id="clients">Our Clients</h3>
+      <div class="container">
+        <img src="images/alexa-1.svg" width="150px" alt="alexa" id="logo" />
+
+        <img src="images/chase.svg" width="150px" alt="chase" id="logos" />
+
+        <img
+          src="images/budweis1.svg"
+          width="150px"
+          alt="budweiser"
+          id="icon"
+        />
+      </div>
+      <div class="container">
+        <img
+          src="images/fairway-greene.svg"
+          width="150px"
+          alt="fairway-greene"
+        />
+
+        <img src="images/nvidia.svg" width="150px" alt="nvidia" />
+
+        <img src="images/alexa-1.svg" width="150px" alt="alexa-1" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 testimonials">
+        <h3 class="info">Testimonials</h3>
+        <img
+          src="images/sarah.jpg"
+          class="rounded-circle"
+          alt="Sarah"
+          width="100px"
+          id="imge"
+        />
+        <p>
+          Lance Events has been the best event<br />
+          centres in Nigeria and that's facts!!!
+        </p>
+        <span>
+          <hr id="hrtext" />
+          Sarah</span
+        >
+      </div>
+      <div class="col-md-4 testimonials">
+        <img
+          src="images/download.png"
+          class="rounded-circle"
+          alt="Mary"
+          width="100px"
+          id="images"
+        />
+        <p id="info">
+          Lance Events has been the best event<br />
+          centres in Nigeria and that's facts!!!
+        </p>
+        <span id="name">
+          <hr id="hrtext" />
+          Mary</span
+        >
+      </div>
+      <div class="col-md-4 testimonials">
+        <img
+          src="images/sola.jpg"
+          class="rounded-circle"
+          alt="Sola"
+          width="100px"
+          id="images"
+        />
+        <p>
+          Lance Events has been the best event<br />
+          centres in Nigeria and that's facts!!!
+        </p>
+        <span>
+          <hr id="hrtext" />
+          Sola</span
+        >
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 enquiry">
+        <h3>Make an Enquiry</h3>
+        <br />
+        <p>
+          Get in touch with a member of our team.if you have any questions or
+          enquiry
+        </p>
+        <form class="form">
+          <input type="text" placeholder="First name" />
+
+          <input type="text" placeholder="Last name" />
+
+          <br />
+
+          <input type="email" placeholder="Email" />
+
+          <input type="number" placeholder="Phone Number" />
+
+          <br />
+
+          <input type="text" placeholder="Type something here...." />
+        </form>
+        <button id="enquire">Send Enquiry</button>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small mdb-color pt-4">
+      <!-- Footer Links -->
+      <div class="container text-center text-md-left ">
+        <!-- Footer links -->
+        <div class="row text-center text-md-left mt-3 pb-3 ">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 ">
+            <h6 class=" mb-4 font-weight-bold ">Keep In Touch</h6>
+            <div>
+              <small>Get exclusive update straight in your inbox</small>
+              <form class="form-inline ">
+                <input
+                  class="form-control mr-sm-2 form-control-sm "
+                  type="email "
+                  placeholder="email "
+                  aria-label="email "
+                  style="border-radius: 0; width: 60%; margin-right: 10px;background-color: #3A3A3A; "
+                />
+                <button
+                  class="btn my-2 my-sm-0 btn-sm "
+                  style="border-radius: 0; font-weight: 700;background-color: #FFD25A; "
+                >
+                  <i class="fa fa-arrow-right " style=" width: 40px "></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none " />
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 ">
+            <h6 class=" mb-4 font-weight-bold ">Contact us</h6>
+            <!-- <h6 class="text-uppercase mb-4 font-weight-bold ">Contact us</h6> -->
+            <p style="color:#979797 ">
+              <i class="fa fa-phone "></i> &nbsp;<a href="tel:234000000000 "
+                ><small>+234 000 000 000</small></a
+              >
+            </p>
+            <p style="color:#979797 ">
+              <i class="fa fa-envelope "></i>&nbsp;<a
+                href="mailto:contact@lanceevent.com "
+                ><small>info@gmail.com</small></a
+              >
+            </p>
+            <p style="color:#979797 ">
+              <i class="fa fa-map-marker "></i>&nbsp;<small
+                >Stutern fola jinadu, gbagada lagos</small
+              >
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none " />
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3 ">
+            <h6 class=" mb-4 font-weight-bold ">About</h6>
+            <p>
+              <a href="#! "><small>Get to know (FAQ)</small></a>
+            </p>
+            <p>
+              <a href="team.html"><small> Meet the team</small></a>
+            </p>
+          </div>
+
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none " />
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 ">
+            <h6 class=" mb-4 font-weight-bold ">Contact us</h6>
+            <!-- <h6 class="text-uppercase mb-4 font-weight-bold ">Contact us</h6> -->
+            <p style="color:#979797 ">
+              <i class="fa fa-phone "></i> &nbsp;<small>+234 000 000 000</small>
+            </p>
+            <p style="color:#979797 ">
+              <i class="fa fa-envelope "></i>&nbsp;<small>info@gmail.com</small>
+            </p>
+            <p style="color:#979797 ">
+              <i class="fa fa-map-marker "></i>&nbsp;<small
+                >Stutern fola jinadu, gbagada lagos</small
+              >
+            </p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Footer links -->
+
+        <hr />
+
+        <!-- Grid row -->
+        <div
+          class="row d-flex align-items-center "
+          style="border-top: 1px solid #707070; padding-top: 15px"
+        >
+          <!-- Grid column -->
+          <div class="col-md-7 col-lg-8 ">
+            <!--Copyright-->
+            <p class="text-center text-md-left ">
+              <small>© Lance Event Ltd. All rights reserved</small>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 ml-lg-0 align-items-center ">
+            <!-- Social buttons -->
+            <div class="text-center text-md-left ">
+              <ul class="list-unstyled list-inline ">
+                <li class="list-inline-item ">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1 ">
+                    <!-- <i class="fab fa-facebook-f "></i> -->
+                    <i
+                      class="fa fa-facebook-square "
+                      style="font-size:24px;color:#646464 "
+                    ></i>
+                    <!-- <i class="fab fa-facebook " ></i> -->
+                  </a>
+                </li>
+                <li class="list-inline-item ">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1 ">
+                    <i
+                      class="fa fa-linkedin-square "
+                      style="font-size:24px;color:#646464 "
+                    ></i>
+                  </a>
+                </li>
+                <li class="list-inline-item ">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1 ">
+                    <!-- <i class="fab fa-google-plus-g "></i> -->
+                    <i
+                      class="fa fa fa-google-plus-square "
+                      style="font-size:24px;color:#646464 "
+                    ></i>
+                  </a>
+                </li>
+                <li class="list-inline-item ">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1 ">
+                    <i
+                      class="fa fa-twitter-square "
+                      style="font-size:24px;color:#646464 "
+                    ></i>
+                    <!-- fab fa-linkedin-in -->
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+      <!-- Footer Links -->
+    </footer>
+    <!-- Footer -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
