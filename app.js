@@ -21,45 +21,45 @@ app.set("view engine", "ejs");
 
 //express-session config
 const sess = {
-  secret: process.env.SESSION_SECRET,
-  cookie: {},
-  resave: false,
-  saveUninitialized: true
+	secret: process.env.SESSION_SECRET,
+	cookie: {},
+	resave: false,
+	saveUninitialized: true
 };
 
 if (app.get("env") === "production") {
-  // Use secure cookies in production (requires SSL/TLS)
-  sess.cookie.secure = true;
+	// Use secure cookies in production (requires SSL/TLS)
+	sess.cookie.secure = true;
 
-  // Uncomment the line below if your application is behind a proxy (like on Heroku)
-  // or if you're encountering the error message:
-  // "Unable to verify authorization request state"
-  // app.set('trust proxy', 1);
+	// Uncomment the line below if your application is behind a proxy (like on Heroku)
+	// or if you're encountering the error message:
+	// "Unable to verify authorization request state"
+	// app.set('trust proxy', 1);
 }
 
 /**
  * Error Handler.
  */
 if (process.env.NODE_ENV === "development") {
-  // only use in development
-  app.use(errorHandler());
+	// only use in development
+	app.use(errorHandler());
 } else {
-  app.use((err, req, res, next) => {
-    console.error(err);
-    res.status(500).send("Server Error");
-  });
+	app.use((err, req, res, next) => {
+		console.error(err);
+		res.status(500).send("Server Error");
+	});
 }
 
 //Configure Mongoose
 mongoose.connect(process.env.DB_URL, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useUnifiedTopology: true
+	useNewUrlParser: true,
+	useCreateIndex: true,
+	useUnifiedTopology: true
 });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
-  console.log("MongoDB database connection established!");
+	console.log("MongoDB database connection established!");
 });
 
 //Configure our app
@@ -72,11 +72,11 @@ app.use(session(sess));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(userInViews());
-app.use("/enqr", enquireRouter);
+app.use("/enq", enquireRouter);
 app.use("/book", bookRouter);
 app.use("/auth", authRouter);
 routes(app);
 
 app.listen(port, () => {
-  console.log(`server running on http://localhost:${port}`);
+	console.log(`server running on http://localhost:${port}`);
 });
