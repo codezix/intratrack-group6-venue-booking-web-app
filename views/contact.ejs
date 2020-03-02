@@ -62,11 +62,17 @@
     a:active {
         color: #FFD25A;
     }
+   
     
     .navbar-toggler {
-        background: #FFD25A;
+    background: #FFD25A;
     }
-    
+    .navbar-toggler div{
+    width: 35px;
+    height:3px;
+    background-color:#ffffff;
+    margin:3px 0;
+     }
     .aion {
         padding: 75px;
         text-align: left;
@@ -97,6 +103,7 @@
 </style>
 
 <body>
+<<<<<<< HEAD:views/contact.ejs
         <header>
       <!-- class="container" -->
       <div style="width: 100%">
@@ -146,6 +153,58 @@
                       <a class="dropdown-item" href="/venue">Waldorf hall</a>
                       <a class="dropdown-item" href="/venue">Benson Avenue</a>
                       <a class="dropdown-item" href="/venue">Beach view</a>
+=======
+    <header>
+        <div>
+
+            <!-- class="container" -->
+            <div style="width: 100%">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <span class="navbar-brand ml-5 h1">LANCE EVENTS</span>
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </span>
+                                </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="venue.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Venues
+                                            </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Waldorf hall</a>
+                                            <a class="dropdown-item" href="#">Benson Avenue</a>
+                                            <a class="dropdown-item" href="#">Beach view</a>
+
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="aboutUs.html">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="contact.html">Contact Us</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="signin.html" id="admin">Admin</a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </nav>
+
+>>>>>>> master:contact.html
                     </div>
                   </li>
                   <li class="nav-item">
@@ -232,9 +291,15 @@
                             <div class="col-md-6 ">
                                 <div class="md-form mb-0 ">
                                     <p>
+                                        <input type="email" id="email " name="email " class="form-control " placeholder="Email" style="background-color:#3A3A3A; border:1px solid #828282">
+                                        <!-- <label for="email " class=" ">Your email</label> -->
 
+<<<<<<< HEAD:views/contact.ejs
                                         <input type="text " id="name " name="firstname " class="form-control  " placeholder="First Name" style="background-color:#3A3A3A; border:1px solid #828282">
                                         <!-- <label for="name " class=" ">Your name</label> -->
+=======
+                                       
+>>>>>>> master:contact.html
                                     </p>
                                 </div>
                             </div>
@@ -244,8 +309,13 @@
                             <div class="col-md-6 ">
                                 <div class="md-form mb-0 ">
                                     <p>
+<<<<<<< HEAD:views/contact.ejs
                                         <input type="text " id="name " name="lastname" class="form-control " placeholder="Last Name" style="background-color:#3A3A3A; border:1px solid #828282">
                                         <!-- <label for="email " class=" ">Your email</label> -->
+=======
+                                        <input type= "number" id="number " name="phonenumber " class="form-control " placeholder="Phone Number" style="background-color:#3A3A3A; border:1px solid #828282">
+                                        <!-- <label for="phonenumber " class=" ">Your phonenumber</label> -->
+>>>>>>> master:contact.html
                                     </p>
                                 </div>
 

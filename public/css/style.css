@@ -5,12 +5,7 @@
    .carousel{
    position:relative;
    }
-   .navbar-toggler div{
-    width: 35px;
-    height:5px;
-    background-color:#ffffff;
-    margin:3px 0;
-     }
+   
    .carousel-caption{
    position:absolute;
    top:12.5rem;
@@ -20,6 +15,15 @@
    }
    .carousel-caption button{
    background:#FFD25A; 
+   border:none;
+   margin-top:20px;
+   height:2.8rem;
+   width:6.25rem;
+
+   }
+   .carousel-caption span{
+    color:#D2D2D2;
+    font-size:larger;
    }
    #textvenue{
   position:absolute;
@@ -42,6 +46,7 @@
     background:#FFD25A;
     margin:0.3125rem 12.5rem;
     width:6.25rem;
+    border:none;
     }
     #waldorf{
     margin-left:8.75rem;
@@ -59,6 +64,7 @@
    color:#ffffff;
    margin-left:1.875rem;
    }
+   
    h1{
    display:inline;
    color:#ffffff;
@@ -67,12 +73,16 @@
    }
    #location{
    font-size:1.5625em;
+   margin-left:-50px;
+   color:#D2D2D2;
    }
    #booknow{
    background:#FFD25A;
    color:#202020;
-   margin:1.5625rem 37.5rem;
-   height:2.5rem;
+   margin:1.5425rem 37.5rem;
+   height:2.8rem;
+   width:6.25rem;
+   border:none;
    }
    .clients{
    background:#828282;
@@ -82,18 +92,18 @@
    }
    #logo{
     position: absolute;
-    left:15.625rem;
-    top:3.125rem;
+    left:13.625rem;
+    top:5.125rem;
    }
    #logos{
     position: absolute;
-    left:37.5rem;
-    top:4.375rem;
+    left:35.5rem;
+    top:6.375rem;
    }
    #icon{
     position: absolute;
-    left:61.875rem;
-    top:3.125rem;
+    left:57.875rem;
+    top:2.125rem;
    }
    .testimonials{
    background:#202020;
@@ -140,6 +150,9 @@
    background-color:#FFD25A;
    margin:0.125rem 37.5rem;
    color:#262626;
+   width:6.30rem;
+   height:3.0rem;
+   border:none;
    }
    footer {
    background-color: #202020;
@@ -163,9 +176,62 @@
     }          
    @media only screen and (max-width: 425px) {
    #booknow{
-   margin-left:50px;
-   height:30px;
-   width:100px;
+   margin-left:3.125rem;
+   height:1.875rem;
+   width:6.25rem;
    }
-   }
+   .carousel-caption{
+    position:absolute;
+    top:1.0rem;
+    left:0.3125rem;
+    display:inline;
+    margin-right:6.25rem;
+    font-size:1.25em;
+    }
+    .carousel-caption button{
+    background:#FFD25A; 
+    border:none;
+    margin-top:2px;
+    height:3.0rem;
+    width:7.25rem;
+ 
+    }
+    .carousel-caption span{
+     color:#D2D2D2;
+     font-size:large;
+     top:6.5625rem;
+     position:absolute;
+    }
+    #location{
+    font-size:1.5625em;
+    color:#D2D2D2;
+    }
+    h1{
+    display:inline;
+    color:#ffffff;
+    white-space: nowrap;
+    font-size:1.0rem;
+    }
+   #name{
+  position:absolute;
+  top:16.25rem;
+  left:1.0rem;
+  }
+  .enquiry p{
+  margin-left:0.3125rem;
+  color:#ffffff;
+  } 
+ .form{
+  margin-left:0.625rem;
+  }
+#enquire{
+margin:0.1875rem 9.375rem;
+}     
+#waldorf{
+margin-left:0rem;
+  }
+ .hall p{
+ margin:0.3rem;
+ }
+}
    
