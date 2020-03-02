@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Contact</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -215,7 +215,7 @@
             <!-- class="mb-4 " -->
 
             <!--Section heading-->
-            <h2 class=" h1-responsive font-weight-bold text-center my-4 ">Make an Enquire</h2>
+            <h2 class=" h1-responsive font-weight-bold text-center my-4 ">Make an Enquiry</h2>
             <!--Section description-->
             <p class="text-center w-responsive mx-auto mb-5 ">Get in touch with a member of our team, if you have any question or enquiries</p>
 
@@ -223,18 +223,15 @@
 
                 <!--Grid column-->
                 <div class="col-md-9 mb-md-0 mb-5 ">
-                    <form id="contact-form " name="contact-form" action="/postEnquiry" method="POST " style="color:#828282; background-color:#3A3A3A; padding:15px">
+                    <form id="enquiryForm" action="/enq/postEnquiry" method="POST" class="mb-2" style="color:#828282; background-color:#3A3A3A; padding:15px">
 
                         <!--Grid row-->
                         <div class="row ">
-
                             <!--Grid column-->
                             <div class="col-md-6 ">
                                 <div class="md-form mb-0 ">
                                     <p>
-
-                                        <input type="text " id="name " name="firstname " class="form-control  " placeholder="First Name" style="background-color:#3A3A3A; border:1px solid #828282">
-                                        <!-- <label for="name " class=" ">Your name</label> -->
+                                        <input type="text" id="name" name="firstName" class="form-control clear" placeholder="First Name" style="background-color:#3A3A3A; border:1px solid #828282">
                                     </p>
                                 </div>
                             </div>
@@ -244,8 +241,7 @@
                             <div class="col-md-6 ">
                                 <div class="md-form mb-0 ">
                                     <p>
-                                        <input type="text " id="name " name="lastname" class="form-control " placeholder="Last Name" style="background-color:#3A3A3A; border:1px solid #828282">
-                                        <!-- <label for="email " class=" ">Your email</label> -->
+                                        <input type="text" id="name " name="lastName" class="form-control clear" placeholder="Last Name" style="background-color:#3A3A3A; border:1px solid #828282">
                                     </p>
                                 </div>
 
@@ -261,21 +257,19 @@
                                 <% if (user) {%>
                                 <div class="md-form mb-0 ">
                                     <p>
-                                        <input type="text " id="email " name="email " class="form-control" placeholder="Email" style="background-color:#3A3A3A; border:1px solid #828282" disabled>
-                                        <!-- <label for="name " class=" ">Your name</label> -->
+                                        <input type="email " id="email " name="email" class="form-control clear" placeholder="Email" style="background-color:#3A3A3A; border:1px solid #828282" disabled>
                                     </p>
                                 </div>
                                 <%} else {%>
                                 <div class="md-form mb-0 ">
                                     <p>
-                                        <input type="text " id="email " name="email " class="form-control" placeholder="Email" style="background-color:#3A3A3A; border:1px solid #828282">
-                                        <!-- <label for="name " class=" ">Your name</label> -->
+                                        <input type="email " id="email " name="email" class="form-control clear" placeholder="Email" style="background-color:#3A3A3A; border:1px solid #828282" required>
                                     </p>
                                 </div>
                                 <% } %>
                                 <div class="md-form mb-0 ">
                                     <p>
-                                        <input type="text " id="subject " name="subject " class="form-control" placeholder="Subject" style="background-color:#3A3A3A; border:1px solid #828282">
+                                        <input type="text " id="subject " name="subject" class="form-control clear" placeholder="Subject" style="background-color:#3A3A3A; border:1px solid #828282">
                                         <!-- <label for="subject " class=" ">Subject</label> -->
                                     </p>
                                 </div>
@@ -291,21 +285,25 @@
 
                                 <div class="md-form ">
                                     <p>
-                                        <textarea type="text " id="message " name="message " rows="2 " class="form-control md-textarea " placeholder="type something here..." style="background-color:#3A3A3A; border:1px solid #828282"></textarea>
+                                        <textarea type="text " id="message" name="enquiry" rows="2 " class="form-control clear md-textarea " placeholder="type something here..." style="background-color:#3A3A3A; border:1px solid #828282"></textarea>
                                         <!-- <label for="message ">Your message</label> -->
                                     </p>
                                 </div>
 
                             </div>
                         </div>
+                        <div class="row ">
+                            <div class="col-md-12 ">
+                                <div class="text-center text-md-left center " style="padding: 10px">
+                                    <input type="submit" value='Send Enquiry' style="background-color: #FFD25A; color:black">
+                                </div>
+                                <div id="enquiryResponse"></div>
+                            </div>
+                        </div>
                         <!--Grid row-->
 
                     </form>
 
-                    <div class="text-center text-md-left center " style="padding: 10px">
-                        <a class="btn"   style="background-color: #FFD25A; color:black">Send Enquiry</a>
-                    </div>
-                    <div class="status "></div>
                 </div>
             </div>
 
@@ -462,7 +460,31 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.js " integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin=" anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
-    <script src="/js/enquiryFormHandler.js"></script>
+    <script>
+            $(function() {
+                $("#enquiryForm").on("submit", function(e) {
+                    e.preventDefault();
+                    $.ajax({
+                        url: $(this).attr("action"),
+                        type: 'POST',
+                        data: $(this).serialize(),
+                        beforeSend: function() {
+                            $("#enquiryResponse").html("sending...");
+                        },
+                        success: function(data) {
+                            $('.clear, textarea').val('');
+                            $("#enquiryResponse").text(data.enquiryResponse);
+
+                            setTimeout(()=>{
+                                $("#enquiryResponse").text('');
+                            },3000)
+
+                        }
+                    });
+                });
+
+            });
+        </script>
 
 </body>
 
