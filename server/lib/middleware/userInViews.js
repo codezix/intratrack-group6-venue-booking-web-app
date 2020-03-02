@@ -1,0 +1,7 @@
+// userInViews.js
+module.exports = () => {
+  return function(req, res, next) {
+    res.locals.user = req.user;
+    next();
+  };
+};
