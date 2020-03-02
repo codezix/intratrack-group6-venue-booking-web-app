@@ -1,558 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Venue</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Literata&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"
-    />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Venue</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+			rel="stylesheet"
+			integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Literata&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"
+		/>
 
-    <link href="dist/css/datepicker.min.css" rel="stylesheet" type="text/css" />
-    <script src="dist/js/datepicker.min.js"></script>
+		<link href="dist/css/datepicker.min.css" rel="stylesheet" type="text/css" />
+		<script src="dist/js/datepicker.min.js"></script>
 
-    <!-- Include English language -->
-    <script src="dist/js/i18n/datepicker.en.js"></script>
-  </head>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+		<!-- Include English language -->
+		<script src="dist/js/i18n/datepicker.en.js"></script>
+	</head>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
 
-    .navbar-brand {
-      color: #ffd25a;
-    }
+		.navbar-brand {
+			color: #ffd25a;
+		}
 
-    html,
-    body {
-      /* font-family: 'Literata', serif; */
-      width: 100%;
-      height: auto;
-      margin: 0px;
-      padding: 0px;
-      overflow-x: hidden;
-      background-color: #3a3a3a;
-    }
+		html,
+		body {
+			/* font-family: 'Literata', serif; */
+			width: 100%;
+			height: auto;
+			margin: 0px;
+			padding: 0px;
+			overflow-x: hidden;
+			background-color: #3a3a3a;
+		}
 
-    .navbar {
-      background: #202020;
-      opacity: 1;
-      width: 100%;
-    }
+		.navbar {
+			background: #202020;
+			opacity: 1;
+			width: 100%;
+		}
 
-    a {
-      color: #ffffff;
-    }
+		a {
+			color: #ffffff;
+		}
 
-    a:hover {
-      color: #ffd25a;
-    }
+		a:hover {
+			color: #ffd25a;
+		}
 
-    ul {
-      margin: 10px 5px;
-    }
+		ul {
+			margin: 10px 5px;
+		}
 
-    li {
-      padding: 10px 5px;
-    }
+		li {
+			padding: 10px 5px;
+		}
 
-    #admin {
-      margin-left: 100px;
-    }
+		#admin {
+			margin-left: 100px;
+		}
 
-    a:active {
-      color: #ffd25a;
-    }
+		a:active {
+			color: #ffd25a;
+		}
 
-    .navbar-toggler {
-      background: #ffd25a;
-    }
-    .navbar-toggler div {
-      width: 35px;
-      height: 5px;
-      background-color: #ffffff;
-      margin: 3px 0;
-    }
-    /* @media only screen and (max-width: 425px) {
+		.navbar-toggler {
+			background: #ffd25a;
+		}
+		.navbar-toggler div {
+			width: 35px;
+			height: 5px;
+			background-color: #ffffff;
+			margin: 3px 0;
+		}
+		/* @media only screen and (max-width: 425px) {
         #admin {
             margin-left: 0px;
         }
     } */
 
-    footer {
-      background-color: #202020;
-      color: #c4c4c4;
-      bottom: 0;
-    }
-  </style>
+		footer {
+			background-color: #202020;
+			color: #c4c4c4;
+			bottom: 0;
+		}
+	</style>
 
-  <body>
-    <div id="WaldorfHallModal" class="modal fade bookingForm" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
-            </button>
-            <h4 class="modal-title">Reserve Waldorf Hall</h4>
-          </div>
-          <div class="modal-body">
-            <form method="POST" action="/postBooking">
-              <input
-                type="text"
-                name="eventCentre"
-                value="Waldorf Hall"
-                disabled
-              />
-              <input type="text" name="firstname" placeholder="First name" />
-              <input type="text" name="lastname" placeholder="Last name" />
-              <input type="tel" name="phone" placeholder="Mobile No." />
-              <input type="text" id="selectDate" data-language="en" />
-              <input
-                class="timepicker timepicker-start"
-                placeholder="startTime"
-              />
-              <input class="timepicker timepicker-end" placeholder="endTime" />
-              <input type="submit" value="Book" />
-              <p class="bookingResponse mt-3 mb-2"></p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+	<body>
+		<div id="WaldorfHallModal" class="modal fade bookingForm" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							&times;
+						</button>
+						<h4 class="modal-title">Reserve Waldorf Hall</h4>
+					</div>
+					<div class="modal-body">
+						<form method="POST" action="book/postBooking">
+							<input
+								type="text"
+								name="eventCentre"
+								value="Waldorf Hall"
+								disabled
+							/>
+							<input type="text" name="firstName" placeholder="First name" />
+							<input type="text" name="lastName" placeholder="Last name" />
+							<input type="tel" name="phone" placeholder="Mobile No." />
+							<input
+								type="text"
+								name="reservationDate"
+								id="selectDate"
+								data-language="en"
+							/>
+							<input
+								class="timepicker timepicker-start"
+								name="startTime"
+								placeholder="startTime"
+							/>
+							<input
+								class="timepicker timepicker-end"
+								name="endTime"
+								placeholder="endTime"
+							/>
+							<input type="submit" value="Book" />
+							<p class="bookingResponse mt-3 mb-2"></p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <div id="BensonAvenueModal" class="modal fade bookingForm" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
-            </button>
-            <h4 class="modal-title">Reserve Benson Avenue</h4>
-          </div>
-          <div class="modal-body">
-            <form method="POST" action="/postBooking">
-              <input
-                type="text"
-                name="eventCentre"
-                value="Benson Avenue"
-                disabled
-              />
-              <input type="text" name="firstname" placeholder="First name" />
-              <input type="text" name="lastname" placeholder="Last name" />
-              <input type="tel" name="phone" placeholder="Mobile No." />
-              <input type="text" id="selectDate" data-language="en" />
-              <input
-                class="timepicker timepicker-start"
-                placeholder="startTime"
-              />
-              <input class="timepicker timepicker-end" placeholder="endTime" />
-              <input type="submit" value="Book" />
-              <p class="bookingResponse mt-3 mb-2"></p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+		<div id="BensonAvenueModal" class="modal fade bookingForm" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							&times;
+						</button>
+						<h4 class="modal-title">Reserve Benson Avenue</h4>
+					</div>
+					<div class="modal-body">
+						<form method="POST" action="book/postBooking">
+							<input
+								type="text"
+								name="eventCentre"
+								value="Benson Avenue"
+								disabled
+							/>
+							<input type="text" name="firstName" placeholder="First name" />
+							<input type="text" name="lastName" placeholder="Last name" />
+							<input type="tel" name="phone" placeholder="Mobile No." />
+							<input
+								type="text"
+								name="reservationDate"
+								id="selectDate"
+								data-language="en"
+							/>
+							<input
+								class="timepicker timepicker-start"
+								name="startTime"
+								placeholder="startTime"
+							/>
+							<input
+								class="timepicker timepicker-end"
+								name="endTime"
+								placeholder="endTime"
+							/>
+							<input type="submit" value="Book" />
+							<p class="bookingResponse mt-3 mb-2"></p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <div id="BeachViewModal" class="modal fade bookingForm" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
-            </button>
-            <h4 class="modal-title">Reserve Beach View</h4>
-          </div>
-          <div class="modal-body">
-            <form method="POST" action="/postBooking">
-              <input
-                type="text"
-                name="eventCentre"
-                value="Beach View"
-                disabled
-              />
-              <input type="text" name="firstname" placeholder="First name" />
-              <input type="text" name="lastname" placeholder="Last name" />
-              <input type="tel" name="phone" placeholder="Mobile No." />
-              <input type="text" id="selectDate" data-language="en" />
-              <input
-                class="timepicker timepicker-start"
-                placeholder="startTime"
-              />
-              <input class="timepicker timepicker-end" placeholder="endTime" />
-              <input type="submit" value="Book" />
-              <p class="bookingResponse mt-3 mb-2"></p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <header>
-      <!-- class="container" -->
-      <div style="width: 100%">
-        <div class="row">
-          <div class="col-md-12">
-            <nav class="navbar navbar-expand-lg">
-              <span class="navbar-brand ml-5 h1">LANCE EVENTS</span>
+		<div id="BeachViewModal" class="modal fade bookingForm" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							&times;
+						</button>
+						<h4 class="modal-title">Reserve Beach View</h4>
+					</div>
+					<div class="modal-body">
+						<form method="POST" action="book/postBooking">
+							<input
+								type="text"
+								name="eventCentre"
+								value="Beach View"
+								disabled
+							/>
+							<input type="text" name="firstName" placeholder="First name" />
+							<input type="text" name="lastName" placeholder="Last name" />
+							<input type="tel" name="phone" placeholder="Mobile No." />
+							<input
+								type="text"
+								name="reservationDate"
+								id="selectDate"
+								data-language="en"
+							/>
+							<input
+								class="timepicker timepicker-start"
+								name="startTime"
+								placeholder="startTime"
+							/>
+							<input
+								class="timepicker timepicker-end"
+								name="endTime"
+								placeholder="endTime"
+							/>
+							<input type="submit" value="Book" />
+							<p class="bookingResponse mt-3 mb-2"></p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<header>
+			<!-- class="container" -->
+			<div style="width: 100%">
+				<div class="row">
+					<div class="col-md-12">
+						<nav class="navbar navbar-expand-lg">
+							<span class="navbar-brand ml-5 h1">LANCE EVENTS</span>
 
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-                <div></div>
-                <div></div>
-                <div></div>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="/">
-                      Home<span class="sr-only">(current)</span>
-                    </a>
-                  </li>
+							<button
+								class="navbar-toggler"
+								type="button"
+								data-toggle="collapse"
+								data-target="#navbarNavDropdown"
+								aria-controls="navbarNavDropdown"
+								aria-expanded="false"
+								aria-label="Toggle navigation"
+							>
+								<span class="navbar-toggler-icon"></span>
+								<div></div>
+								<div></div>
+								<div></div>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNavDropdown">
+								<ul class="navbar-nav ml-auto">
+									<li class="nav-item active">
+										<a class="nav-link" href="/">
+											Home<span class="sr-only">(current)</span>
+										</a>
+									</li>
 
-                  <li class="nav-item dropdown">
-                    <a
-                      class="nav-link dropdown-toggle"
-                      id="navbarDropdownMenuLink"
-                      role="button"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      href="/venue"
-                    >
-                      Venues
-                    </a>
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="navbarDropdownMenuLink"
-                    >
-                      <a class="dropdown-item" href="/venue">Waldorf hall</a>
-                      <a class="dropdown-item" href="/venue">Benson Avenue</a>
-                      <a class="dropdown-item" href="/venue">Beach view</a>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/aboutUs">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact Us</a>
-                  </li>
-                  <% if (user) {%>
-                  <li class="nav-item ">
-                    <a class="nav-link" href="/auth/logout" id="login"
-                      >Logout, <span id="user"><%= locals.user.email%></span></a
-                    >
-                  </li>
-                  <%} else{%>
-                  <li class="nav-item ">
-                    <a class="nav-link" href="/auth/login" id="login">Login</a>
-                  </li>
-                  <%}%>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="bg-img">
-          <h1 id="textvenue">Venues</h1>
-        </div>
-      </div>
-    </div>
-    <div class="row pt-4">
-      <div class="col-md-6 pl-5 mb-3">
-        <img
-          src="images/waldorf .png"
-          width="500px"
-          height="300px"
-          id="waldorf"
-          alt="Waldorf Hall"
-        />
-      </div>
-      <div class="col-md-6 ">
-        <div class="hall">
-          <p id="venuename">Waldorf Hall</p>
-          <p>
-            Waldorf Hall is one of Lagos's most unique venues. Centrally<br />
-            located in high-rise Lekki , surrounded by tech startups, galleries,
-            hotels and great restaurants, Waldorf Hall is ideal for a variety of
-            Weddings, social, non-profit and arts-related events, product
-            launches, bar/bat mitzvahs, fundraisers and <br />many other
-            celebrations.
-          </p>
+									<li class="nav-item dropdown">
+										<a
+											class="nav-link dropdown-toggle"
+											id="navbarDropdownMenuLink"
+											role="button"
+											data-toggle="dropdown"
+											aria-haspopup="true"
+											aria-expanded="false"
+											href="/venue"
+										>
+											Venues
+										</a>
+										<div
+											class="dropdown-menu"
+											aria-labelledby="navbarDropdownMenuLink"
+										>
+											<a class="dropdown-item" href="/venue">Waldorf hall</a>
+											<a class="dropdown-item" href="/venue">Benson Avenue</a>
+											<a class="dropdown-item" href="/venue">Beach view</a>
+										</div>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/aboutUs">About Us</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/contact">Contact Us</a>
+									</li>
+									<% if (user) {%>
+									<li class="nav-item ">
+										<a class="nav-link" href="/auth/logout" id="login"
+											>Logout, <span id="user"><%= locals.user.email%></span></a
+										>
+									</li>
+									<%} else{%>
+									<li class="nav-item ">
+										<a class="nav-link" href="/auth/login" id="login">Login</a>
+									</li>
+									<%}%>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="bg-img">
+					<h1 id="textvenue">Venues</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row pt-4">
+			<div class="col-md-6 pl-5 mb-3">
+				<img
+					src="images/waldorf .png"
+					width="500px"
+					height="300px"
+					id="waldorf"
+					alt="Waldorf Hall"
+				/>
+			</div>
+			<div class="col-md-6 ">
+				<div class="hall">
+					<p id="venuename">Waldorf Hall</p>
+					<p>
+						Waldorf Hall is one of Lagos's most unique venues. Centrally<br />
+						located in high-rise Lekki , surrounded by tech startups, galleries,
+						hotels and great restaurants, Waldorf Hall is ideal for a variety of
+						Weddings, social, non-profit and arts-related events, product
+						launches, bar/bat mitzvahs, fundraisers and <br />many other
+						celebrations.
+					</p>
 
-          <button data-toggle="modal" data-target="#WaldorfHallModal">
-            Book
-          </button>
-        </div>
-      </div>
-    </div>
+					<button data-toggle="modal" data-target="#WaldorfHallModal">
+						Book
+					</button>
+				</div>
+			</div>
+		</div>
 
-    <div class="row pt-4">
-      <div class="col-md-6 pl-5 mb-3">
-        <img
-          src="images/benson avenue.jpg"
-          width="500px"
-          height="300px"
-          id="waldorf"
-          alt="Benson Avenue"
-        />
-      </div>
-      <div class="col-md-6 ">
-        <div class="hall">
-          <p id="venuename">Benson Avenue</p>
-          <p>
-            Beach View is one of Lagos's most unique venues. Centrally<br />
-            located in high-rise Lekki , surrounded by tech startups, galleries,
-            hotels and great restaurants, Waldorf Hall is ideal for a variety of
-            Weddings, social, non-profit and arts-related events, product
-            launches, bar/bat mitzvahs, fundraisers and <br />many other
-            celebrations.
-          </p>
+		<div class="row pt-4">
+			<div class="col-md-6 pl-5 mb-3">
+				<img
+					src="images/benson avenue.jpg"
+					width="500px"
+					height="300px"
+					id="waldorf"
+					alt="Benson Avenue"
+				/>
+			</div>
+			<div class="col-md-6 ">
+				<div class="hall">
+					<p id="venuename">Benson Avenue</p>
+					<p>
+						Beach View is one of Lagos's most unique venues. Centrally<br />
+						located in high-rise Lekki , surrounded by tech startups, galleries,
+						hotels and great restaurants, Waldorf Hall is ideal for a variety of
+						Weddings, social, non-profit and arts-related events, product
+						launches, bar/bat mitzvahs, fundraisers and <br />many other
+						celebrations.
+					</p>
 
-          <button data-toggle="modal" data-target="#BensonAvenueModal">
-            Book
-          </button>
-        </div>
-      </div>
-    </div>
+					<button data-toggle="modal" data-target="#BensonAvenueModal">
+						Book
+					</button>
+				</div>
+			</div>
+		</div>
 
-    <div class="row pt-4">
-      <div class="col-md-6 pl-5 mb-3">
-        <img
-          src="images/beach view.jpg"
-          width="500px"
-          height="300px"
-          id="waldorf"
-          alt="Beach View"
-        />
-      </div>
-      <div class="col-md-6 ">
-        <div class="hall">
-          <p id="venuename">Beach View</p>
-          <p>
-            Beach View is one of Lagos's most unique venues. Centrally<br />
-            located in high-rise Lekki , surrounded by tech startups, galleries,
-            hotels and great restaurants, Waldorf Hall is ideal for a variety of
-            Weddings, social, non-profit and arts-related events, product
-            launches, bar/bat mitzvahs, fundraisers and <br />many other
-            celebrations.
-          </p>
+		<div class="row pt-4">
+			<div class="col-md-6 pl-5 mb-3">
+				<img
+					src="images/beach view.jpg"
+					width="500px"
+					height="300px"
+					id="waldorf"
+					alt="Beach View"
+				/>
+			</div>
+			<div class="col-md-6 ">
+				<div class="hall">
+					<p id="venuename">Beach View</p>
+					<p>
+						Beach View is one of Lagos's most unique venues. Centrally<br />
+						located in high-rise Lekki , surrounded by tech startups, galleries,
+						hotels and great restaurants, Waldorf Hall is ideal for a variety of
+						Weddings, social, non-profit and arts-related events, product
+						launches, bar/bat mitzvahs, fundraisers and <br />many other
+						celebrations.
+					</p>
 
-          <button data-toggle="modal" data-target="#BeachViewModal">
-            Book
-          </button>
-        </div>
-      </div>
-    </div>
+					<button data-toggle="modal" data-target="#BeachViewModal">
+						Book
+					</button>
+				</div>
+			</div>
+		</div>
 
-    <!-- Footer -->
-    <footer class="page-footer font-small mdb-color pt-4">
-      <!-- Footer Links -->
-      <div class="container text-center text-md-left ">
-        <!-- Footer links -->
-        <div class="row text-center text-md-left mt-3 pb-3 ">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 ">
-            <h6 class=" mb-4 font-weight-bold ">Keep In Touch</h6>
-            <div>
-              <small>Get exclusive update straight in your inbox</small>
-              <form class="form-inline ">
-                <input
-                  class="form-control mr-sm-2 form-control-sm "
-                  type="email "
-                  placeholder="email "
-                  aria-label="email "
-                  style="border-radius: 0; width: 60%; margin-right: 10px;background-color: #3A3A3A; "
-                />
-                <button
-                  class="btn my-2 my-sm-0 btn-sm "
-                  style="border-radius: 0; font-weight: 700;background-color: #FFD25A; "
-                >
-                  <i class="fa fa-arrow-right " style=" width: 40px "></i>
-                </button>
-              </form>
-            </div>
-          </div>
-          <!-- Grid column -->
+		<!-- Footer -->
+		<footer class="page-footer font-small mdb-color pt-4">
+			<!-- Footer Links -->
+			<div class="container text-center text-md-left ">
+				<!-- Footer links -->
+				<div class="row text-center text-md-left mt-3 pb-3 ">
+					<!-- Grid column -->
+					<div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 ">
+						<h6 class=" mb-4 font-weight-bold ">Keep In Touch</h6>
+						<div>
+							<small>Get exclusive update straight in your inbox</small>
+							<form class="form-inline ">
+								<input
+									class="form-control mr-sm-2 form-control-sm "
+									type="email "
+									placeholder="email "
+									aria-label="email "
+									style="border-radius: 0; width: 60%; margin-right: 10px;background-color: #3A3A3A; "
+								/>
+								<button
+									class="btn my-2 my-sm-0 btn-sm "
+									style="border-radius: 0; font-weight: 700;background-color: #FFD25A; "
+								>
+									<i class="fa fa-arrow-right " style=" width: 40px "></i>
+								</button>
+							</form>
+						</div>
+					</div>
+					<!-- Grid column -->
 
-          <hr class="w-100 clearfix d-md-none " />
+					<hr class="w-100 clearfix d-md-none " />
 
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 ">
-            <h6 class=" mb-4 font-weight-bold ">Contact us</h6>
-            <!-- <h6 class="text-uppercase mb-4 font-weight-bold ">Contact us</h6> -->
-            <p style="color:#979797 ">
-              <i class="fa fa-phone "></i> &nbsp;<a href="tel:234000000000 "
-                ><small>+234 000 000 000</small></a
-              >
-            </p>
-            <p style="color:#979797 ">
-              <i class="fa fa-envelope "></i>&nbsp;<a
-                href="mailto:contact@lanceevent.com "
-                ><small>info@gmail.com</small></a
-              >
-            </p>
-            <p style="color:#979797 ">
-              <i class="fa fa-map-marker "></i>&nbsp;<small
-                >Stutern fola jinadu, gbagada lagos</small
-              >
-            </p>
-          </div>
-          <!-- Grid column -->
+					<!-- Grid column -->
+					<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 ">
+						<h6 class=" mb-4 font-weight-bold ">Contact us</h6>
+						<!-- <h6 class="text-uppercase mb-4 font-weight-bold ">Contact us</h6> -->
+						<p style="color:#979797 ">
+							<i class="fa fa-phone "></i> &nbsp;<a href="tel:234000000000 "
+								><small>+234 000 000 000</small></a
+							>
+						</p>
+						<p style="color:#979797 ">
+							<i class="fa fa-envelope "></i>&nbsp;<a
+								href="mailto:contact@lanceevent.com "
+								><small>info@gmail.com</small></a
+							>
+						</p>
+						<p style="color:#979797 ">
+							<i class="fa fa-map-marker "></i>&nbsp;<small
+								>Stutern fola jinadu, gbagada lagos</small
+							>
+						</p>
+					</div>
+					<!-- Grid column -->
 
-          <hr class="w-100 clearfix d-md-none " />
+					<hr class="w-100 clearfix d-md-none " />
 
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3 ">
-            <h6 class=" mb-4 font-weight-bold ">About</h6>
-            <p>
-              <a href="#! "><small>Get to know (FAQ)</small></a>
-            </p>
-            <p>
-              <a href="team.html"><small> Meet the team</small></a>
-            </p>
-          </div>
+					<!-- Grid column -->
+					<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3 ">
+						<h6 class=" mb-4 font-weight-bold ">About</h6>
+						<p>
+							<a href="#! "><small>Get to know (FAQ)</small></a>
+						</p>
+						<p>
+							<a href="team.html"><small> Meet the team</small></a>
+						</p>
+					</div>
 
-          <!-- Grid column -->
-          <hr class="w-100 clearfix d-md-none " />
+					<!-- Grid column -->
+					<hr class="w-100 clearfix d-md-none " />
 
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 ">
-            <h6 class=" mb-4 font-weight-bold ">Contact us</h6>
-            <!-- <h6 class="text-uppercase mb-4 font-weight-bold ">Contact us</h6> -->
-            <p style="color:#979797 ">
-              <i class="fa fa-phone "></i> &nbsp;<small>+234 000 000 000</small>
-            </p>
-            <p style="color:#979797 ">
-              <i class="fa fa-envelope "></i>&nbsp;<small>info@gmail.com</small>
-            </p>
-            <p style="color:#979797 ">
-              <i class="fa fa-map-marker "></i>&nbsp;<small
-                >Stutern fola jinadu, gbagada lagos</small
-              >
-            </p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Footer links -->
+					<!-- Grid column -->
+					<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 ">
+						<h6 class=" mb-4 font-weight-bold ">Contact us</h6>
+						<!-- <h6 class="text-uppercase mb-4 font-weight-bold ">Contact us</h6> -->
+						<p style="color:#979797 ">
+							<i class="fa fa-phone "></i> &nbsp;<small>+234 000 000 000</small>
+						</p>
+						<p style="color:#979797 ">
+							<i class="fa fa-envelope "></i>&nbsp;<small>info@gmail.com</small>
+						</p>
+						<p style="color:#979797 ">
+							<i class="fa fa-map-marker "></i>&nbsp;<small
+								>Stutern fola jinadu, gbagada lagos</small
+							>
+						</p>
+					</div>
+					<!-- Grid column -->
+				</div>
+				<!-- Footer links -->
 
-        <hr />
+				<hr />
 
-        <!-- Grid row -->
-        <div
-          class="row d-flex align-items-center "
-          style="border-top: 1px solid #707070; padding-top: 15px "
-        >
-          <!-- Grid column -->
-          <div class="col-md-7 col-lg-8 ">
-            <!--Copyright-->
-            <p class="text-center text-md-left ">
-              <small>© Lance Event Ltd. All rights reserved</small>
-            </p>
-          </div>
-          <!-- Grid column -->
+				<!-- Grid row -->
+				<div
+					class="row d-flex align-items-center "
+					style="border-top: 1px solid #707070; padding-top: 15px "
+				>
+					<!-- Grid column -->
+					<div class="col-md-7 col-lg-8 ">
+						<!--Copyright-->
+						<p class="text-center text-md-left ">
+							<small>© Lance Event Ltd. All rights reserved</small>
+						</p>
+					</div>
+					<!-- Grid column -->
 
-          <!-- Grid column -->
-          <div class="col-md-5 col-lg-4 ml-lg-0 align-items-center ">
-            <!-- Social buttons -->
-            <div class="text-center text-md-left ">
-              <ul class="list-unstyled list-inline ">
-                <li class="list-inline-item ">
-                  <a class="btn-floating btn-sm rgba-white-slight mx-1 ">
-                    <!-- <i class="fab fa-facebook-f "></i> -->
-                    <i
-                      class="fa fa-facebook-square "
-                      style="font-size:24px;color:#646464 "
-                    ></i>
-                    <!-- <i class="fab fa-facebook " ></i> -->
-                  </a>
-                </li>
-                <li class="list-inline-item ">
-                  <a class="btn-floating btn-sm rgba-white-slight mx-1 ">
-                    <i
-                      class="fa fa-linkedin-square "
-                      style="font-size:24px;color:#646464 "
-                    ></i>
-                  </a>
-                </li>
-                <li class="list-inline-item ">
-                  <a class="btn-floating btn-sm rgba-white-slight mx-1 ">
-                    <!-- <i class="fab fa-google-plus-g "></i> -->
-                    <i
-                      class="fa fa fa-google-plus-square "
-                      style="font-size:24px;color:#646464 "
-                    ></i>
-                  </a>
-                </li>
-                <li class="list-inline-item ">
-                  <a class="btn-floating btn-sm rgba-white-slight mx-1 ">
-                    <i
-                      class="fa fa-twitter-square "
-                      style="font-size:24px;color:#646464 "
-                    ></i>
-                    <!-- fab fa-linkedin-in -->
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-      </div>
-      <!-- Footer Links -->
-    </footer>
-    <!-- Footer -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.js"
-      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
-    <script src="../public/js/venue-time.js"></script>
-    <script src="../public/js/bookingFormHandler.js"></script>
-  </body>
+					<!-- Grid column -->
+					<div class="col-md-5 col-lg-4 ml-lg-0 align-items-center ">
+						<!-- Social buttons -->
+						<div class="text-center text-md-left ">
+							<ul class="list-unstyled list-inline ">
+								<li class="list-inline-item ">
+									<a class="btn-floating btn-sm rgba-white-slight mx-1 ">
+										<!-- <i class="fab fa-facebook-f "></i> -->
+										<i
+											class="fa fa-facebook-square "
+											style="font-size:24px;color:#646464 "
+										></i>
+										<!-- <i class="fab fa-facebook " ></i> -->
+									</a>
+								</li>
+								<li class="list-inline-item ">
+									<a class="btn-floating btn-sm rgba-white-slight mx-1 ">
+										<i
+											class="fa fa-linkedin-square "
+											style="font-size:24px;color:#646464 "
+										></i>
+									</a>
+								</li>
+								<li class="list-inline-item ">
+									<a class="btn-floating btn-sm rgba-white-slight mx-1 ">
+										<!-- <i class="fab fa-google-plus-g "></i> -->
+										<i
+											class="fa fa fa-google-plus-square "
+											style="font-size:24px;color:#646464 "
+										></i>
+									</a>
+								</li>
+								<li class="list-inline-item ">
+									<a class="btn-floating btn-sm rgba-white-slight mx-1 ">
+										<i
+											class="fa fa-twitter-square "
+											style="font-size:24px;color:#646464 "
+										></i>
+										<!-- fab fa-linkedin-in -->
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- Grid column -->
+				</div>
+				<!-- Grid row -->
+			</div>
+			<!-- Footer Links -->
+		</footer>
+		<!-- Footer -->
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.js"
+			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"
+		></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+		<script src="../public/js/venue-time.js"></script>
+		<script src="../public/js/bookingFormHandler.js"></script>
+	</body>
 </html>

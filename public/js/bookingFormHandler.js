@@ -10,7 +10,7 @@ $(document).ready(() => {
 				res.json();
 			})
 			.then(data => {
-				console.log(data.bookingResponse);
+				console.log(data);
 				// bookingResponse.text(data.bookingResponse);
 			})
 			.catch(err => {
