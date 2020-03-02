@@ -340,8 +340,9 @@
 				</p>
 				<form
 					id="enquiryForm"
-					action="enq/postEnquiry"
+					action="/enq/postEnquiry"
 					method="POST"
+					class="mb-2"
 					style="color:#828282; background-color:#3A3A3A; padding:15px"
 				>
 					<!--Grid row-->
@@ -351,14 +352,13 @@
 							<div class="md-form mb-0 ">
 								<p>
 									<input
-										type="text "
-										id="name "
-										name="firstname "
-										class="form-control  "
+										type="text"
+										id="name"
+										name="firstName"
+										class="form-control clear"
 										placeholder="First Name"
 										style="background-color:#3A3A3A; border:1px solid #828282"
 									/>
-									<!-- <label for="name " class=" ">Your name</label> -->
 								</p>
 							</div>
 						</div>
@@ -369,14 +369,13 @@
 							<div class="md-form mb-0 ">
 								<p>
 									<input
-										type="text "
-										id="name "
-										name="lastname"
-										class="form-control "
+										type="text"
+										id="name"
+										name="lastName"
+										class="form-control clear"
 										placeholder="Last Name"
 										style="background-color:#3A3A3A; border:1px solid #828282"
 									/>
-									<!-- <label for="email " class=" ">Your email</label> -->
 								</p>
 							</div>
 						</div>
@@ -393,38 +392,36 @@
 									<input
 										type="email "
 										id="email "
-										name="email "
-										class="form-control"
+										name="email"
+										class="form-control clear"
 										placeholder="Email"
 										style="background-color:#3A3A3A; border:1px solid #828282"
 										disabled
 									/>
-									<!-- <label for="name " class=" ">Your name</label> -->
 								</p>
 							</div>
 							<%} else {%>
 							<div class="md-form mb-0 ">
 								<p>
 									<input
-										type="email "
-										id="email "
-										name="email "
-										class="form-control"
+										type="email"
+										id="email"
+										name="email"
+										class="form-control clear"
 										placeholder="Email"
 										style="background-color:#3A3A3A; border:1px solid #828282"
 										required
 									/>
-									<!-- <label for="name " class=" ">Your name</label> -->
 								</p>
 							</div>
 							<% } %>
 							<div class="md-form mb-0 ">
 								<p>
 									<input
-										type="text "
-										id="subject "
-										name="subject "
-										class="form-control"
+										type="text"
+										id="subject"
+										name="subject"
+										class="form-control clear"
 										placeholder="Subject"
 										style="background-color:#3A3A3A; border:1px solid #828282"
 									/>
@@ -443,10 +440,10 @@
 								<p>
 									<textarea
 										type="text "
-										id="message "
-										name="message "
+										id="message"
+										name="enquiry"
 										rows="2 "
-										class="form-control md-textarea "
+										class="form-control clear md-textarea "
 										placeholder="type something here..."
 										style="background-color:#3A3A3A; border:1px solid #828282"
 									></textarea>
@@ -456,7 +453,7 @@
 						</div>
 					</div>
 					<div class="row ">
-						<div class="col-md-6 ">
+						<div class="col-md-12 ">
 							<div
 								class="text-center text-md-left center "
 								style="padding: 10px"
@@ -464,10 +461,10 @@
 								<input
 									type="submit"
 									value="Send Enquiry"
-									style="background-color: #FFD25A; border-color:#FFD25A; color:black"
+									style="background-color: #FFD25A; color:black"
 								/>
 							</div>
-							<div id="enquiryResponse">hh</div>
+							<div id="enquiryResponse"></div>
 						</div>
 					</div>
 					<!--Grid row-->
@@ -644,6 +641,28 @@
 			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 			crossorigin="anonymous"
 		></script>
-		<script src="/js/enquiryFormHandler.js"></script>
+		<script>
+			$(function() {
+				$("#enquiryForm").on("submit", function(e) {
+					e.preventDefault();
+					$.ajax({
+						url: $(this).attr("action"),
+						type: "POST",
+						data: $(this).serialize(),
+						beforeSend: function() {
+							$("#enquiryResponse").html("sending...");
+						},
+						success: function(data) {
+							$(".clear, textarea").val("");
+							$("#enquiryResponse").text(data.enquiryResponse);
+
+							setTimeout(() => {
+								$("#enquiryResponse").text("");
+							}, 3000);
+						}
+					});
+				});
+			});
+		</script>
 	</body>
 </html>

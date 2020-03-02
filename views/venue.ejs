@@ -30,12 +30,25 @@
 			rel="stylesheet"
 			href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"
 		/>
+		<link rel="stylesheet" href="/css/jqueryuitheme.css" />
 
-		<link href="dist/css/datepicker.min.css" rel="stylesheet" type="text/css" />
-		<script src="dist/js/datepicker.min.js"></script>
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.js"
+			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"
+		></script>
 
-		<!-- Include English language -->
-		<script src="dist/js/i18n/datepicker.en.js"></script>
+		<script
+			src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+			integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+			crossorigin="anonymous"
+		></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 	</head>
 	<style>
 		* {
@@ -110,135 +123,201 @@
 	</style>
 
 	<body>
-		<div id="WaldorfHallModal" class="modal fade bookingForm" role="dialog">
+		<div id="WaldorfHallModal" class="modal fade " role="dialog">
 			<div class="modal-dialog">
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
+						<h4 class="modal-title">Reserve Waldorf Hall</h4>
+
 						<button type="button" class="close" data-dismiss="modal">
 							&times;
 						</button>
-						<h4 class="modal-title">Reserve Waldorf Hall</h4>
 					</div>
 					<div class="modal-body">
-						<form method="POST" action="book/postBooking">
+						<form
+							class="bookingForm clear"
+							method="POST"
+							action="book/postBooking"
+						>
 							<input
 								type="text"
 								name="eventCentre"
 								value="Waldorf Hall"
-								disabled
+								hidden
 							/>
-							<input type="text" name="firstName" placeholder="First name" />
-							<input type="text" name="lastName" placeholder="Last name" />
-							<input type="tel" name="phone" placeholder="Mobile No." />
+							<input
+								class="clear"
+								type="text"
+								name="firstName"
+								placeholder="First name"
+								required
+							/>
+							<input
+								class="clear"
+								type="text"
+								name="lastName"
+								placeholder="Last name"
+								required
+							/>
+							<input
+								class="clear"
+								type="tel"
+								name="phone"
+								placeholder="Mobile No."
+								required
+							/>
 							<input
 								type="text"
 								name="reservationDate"
-								id="selectDate"
-								data-language="en"
+								class="datepicker1 clear"
+								required
 							/>
 							<input
-								class="timepicker timepicker-start"
+								class="timepicker clear timepicker-start"
 								name="startTime"
 								placeholder="startTime"
+								required
 							/>
 							<input
-								class="timepicker timepicker-end"
+								class="timepicker clear timepicker-end"
 								name="endTime"
 								placeholder="endTime"
+								required
 							/>
 							<input type="submit" value="Book" />
-							<p class="bookingResponse mt-3 mb-2"></p>
+							<div class="bookingResponse mt-3 mb-2"></div>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="BensonAvenueModal" class="modal fade bookingForm" role="dialog">
+		<div id="BensonAvenueModal" class="modal fade " role="dialog">
 			<div class="modal-dialog">
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
+						<h4 class="modal-title">Reserve Benson Avenue</h4>
+
 						<button type="button" class="close" data-dismiss="modal">
 							&times;
 						</button>
-						<h4 class="modal-title">Reserve Benson Avenue</h4>
 					</div>
 					<div class="modal-body">
-						<form method="POST" action="book/postBooking">
+						<form
+							class="bookingForm clear"
+							method="POST"
+							action="book/postBooking"
+						>
 							<input
 								type="text"
 								name="eventCentre"
 								value="Benson Avenue"
-								disabled
+								hidden
 							/>
-							<input type="text" name="firstName" placeholder="First name" />
-							<input type="text" name="lastName" placeholder="Last name" />
-							<input type="tel" name="phone" placeholder="Mobile No." />
+							<input
+								class="clear"
+								type="text"
+								name="firstName"
+								placeholder="First name"
+								required
+							/>
+							<input
+								class="clear"
+								type="text"
+								name="lastName"
+								placeholder="Last name"
+								required
+							/>
+							<input
+								class="clear"
+								type="tel"
+								name="phone"
+								placeholder="Mobile No."
+								required
+							/>
 							<input
 								type="text"
 								name="reservationDate"
-								id="selectDate"
-								data-language="en"
+								class="datepicker2 clear"
+								required
 							/>
 							<input
-								class="timepicker timepicker-start"
+								class="timepicker clear timepicker-start"
 								name="startTime"
 								placeholder="startTime"
+								required
 							/>
 							<input
-								class="timepicker timepicker-end"
+								class="timepicker clear timepicker-end"
 								name="endTime"
 								placeholder="endTime"
+								required
 							/>
 							<input type="submit" value="Book" />
-							<p class="bookingResponse mt-3 mb-2"></p>
+							<div class="bookingResponse mt-3 mb-2"></div>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="BeachViewModal" class="modal fade bookingForm" role="dialog">
+		<div id="BeachViewModal" class="modal fade clear " role="dialog">
 			<div class="modal-dialog">
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
+						<h4 class="modal-title">Reserve Beach View</h4>
+
 						<button type="button" class="close" data-dismiss="modal">
 							&times;
 						</button>
-						<h4 class="modal-title">Reserve Beach View</h4>
 					</div>
 					<div class="modal-body">
-						<form method="POST" action="book/postBooking">
+						<form class="bookingForm " method="POST" action="book/postBooking">
+							<input type="text" name="eventCentre" value="Beach View" hidden />
 							<input
+								class="clear"
 								type="text"
-								name="eventCentre"
-								value="Beach View"
-								disabled
+								name="firstName"
+								placeholder="First name"
+								required
 							/>
-							<input type="text" name="firstName" placeholder="First name" />
-							<input type="text" name="lastName" placeholder="Last name" />
-							<input type="tel" name="phone" placeholder="Mobile No." />
+							<input
+								class="clear"
+								type="text"
+								name="lastName"
+								placeholder="Last name"
+								required
+							/>
+							<input
+								class="clear"
+								type="tel"
+								name="phone"
+								placeholder="Mobile No."
+								required
+							/>
 							<input
 								type="text"
 								name="reservationDate"
-								id="selectDate"
-								data-language="en"
+								class="datepicker3 clear"
+								required
 							/>
 							<input
-								class="timepicker timepicker-start"
+								class="timepicker clear timepicker-start"
 								name="startTime"
 								placeholder="startTime"
+								required
 							/>
 							<input
-								class="timepicker timepicker-end"
+								class="timepicker clear timepicker-end"
 								name="endTime"
 								placeholder="endTime"
+								required
 							/>
 							<input type="submit" value="Book" />
-							<p class="bookingResponse mt-3 mb-2"></p>
+							<div class="bookingResponse mt-3 mb-2"></div>
 						</form>
 					</div>
 				</div>
@@ -571,18 +650,73 @@
 			<!-- Footer Links -->
 		</footer>
 		<!-- Footer -->
-		<script
-			src="https://code.jquery.com/jquery-3.4.1.js"
-			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-			crossorigin="anonymous"
-		></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
-		<script src="../public/js/venue-time.js"></script>
-		<script src="../public/js/bookingFormHandler.js"></script>
+
+		<script>
+			$(document).ready(() => {
+				const bookingForm = $(".bookingForm");
+				const bookingResponse = $(".bookingResponse");
+
+				$(".bookingForm").on("submit", function(e) {
+					e.preventDefault();
+					$.ajax({
+						url: $(this).attr("action"),
+						type: "POST",
+						data: $(this).serialize(),
+						beforeSend: function() {
+							$(".bookingResponse").html("sending...");
+						},
+						success: function(data) {
+							console.log(data);
+							$(".clear").val("");
+							$(".bookingResponse").text(data.bookingResponse);
+							setTimeout(() => {
+								$(".bookingResponse").text("");
+							}, 3000);
+						}
+					});
+				});
+			});
+		</script>
+
+		<script>
+			$(document).ready(() => {
+				$(".datepicker1").datepicker({
+					minDate: new Date(),
+					dateFormat: "dd-mm-yy",
+					showAnim: "slideDown"
+				});
+
+				$(".datepicker2").datepicker({
+					minDate: new Date(),
+					dateFormat: "dd-mm-yy",
+					showAnim: "slideDown"
+				});
+
+				$(".datepicker3").datepicker({
+					minDate: new Date(),
+					dateFormat: "dd-mm-yy",
+					showAnim: "slideDown"
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(() => {
+				$(".timepicker-start, .timepicker-end").timepicker({
+					timeFormat: "HH:mm ",
+					interval: 60,
+					minTime: "12:00am",
+					maxTime: "11:00 pm",
+					dynamic: false,
+					dropdown: false,
+					scrollbar: true
+				});
+
+				const timeStart = $(".timepicker-start");
+				const timeEnd = $(".timepicker-end");
+
+				timeStart.timepicker({});
+				timeEnd.timepicker({});
+			});
+		</script>
 	</body>
 </html>

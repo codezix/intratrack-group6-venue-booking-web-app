@@ -2,41 +2,41 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const BookingSchema = new Schema({
-  eventCenter: String,
+	eventCentre: String,
 
-  startTime: String,
+	startTime: { type: String, trim: true },
 
-  endTime: String,
+	endTime: { type: String, trim: true },
 
-  reservationDate: {
-    type: String
-  },
+	reservationDate: {
+		type: String
+	},
 
-  firstName: {
-    type: String,
-    trim: true,
-    required: true
-  },
+	firstName: {
+		type: String,
+		trim: true,
+		required: true
+	},
 
-  lastName: {
-    type: String,
-    trim: true,
-    required: true
-  },
+	lastName: {
+		type: String,
+		trim: true,
+		required: true
+	},
 
-  email: {
-    type: String,
-    trim: true,
-    required: true
-  },
+	email: {
+		type: String,
+		trim: true,
+		required: true
+	},
 
-  phone: {
-    type: Number,
-    trim: true
-  },
-  createdAt: {
-    type: Date
-  }
+	phone: {
+		type: Number,
+		trim: true
+	},
+	createdAt: {
+		type: Date
+	}
 });
 
 const Booking = mongoose.model("Booking", BookingSchema);
