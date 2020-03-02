@@ -93,7 +93,7 @@ router.post("/postBooking", secured(), (req, res, next) => {
 router.get("/recentBookings", checkAdmin(), (req, res, next) => {
 	Booking.find()
 		.sort({ _id: -1 })
-		.limit(10)
+		.limit(3)
 		.then(bookings => {
 			res.send({
 				recentBookings: bookings

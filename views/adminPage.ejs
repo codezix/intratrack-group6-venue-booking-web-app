@@ -183,27 +183,6 @@
 								<th>Date</th>
 								<th>Status</th>
 							</tr>
-							<tr>
-								<td>Onasanya Lanre</td>
-								<td>Sao.onasanya@gmail.com</td>
-								<td>Waldorf Hall</td>
-								<td>December 13th 2019</td>
-								<td><button class="approved">Approved</button></td>
-							</tr>
-							<tr>
-								<td>Onasanya Lanre</td>
-								<td>Sao.onasanya@gmail.com</td>
-								<td>Waldorf Hall</td>
-								<td>December 13th 2019</td>
-								<td><button class="approved">Approved</button></td>
-							</tr>
-							<tr>
-								<td>Onasanya Lanre</td>
-								<td>Sao.onasanya@gmail.com</td>
-								<td>Waldorf Hall</td>
-								<td>December 13th 2019</td>
-								<td><button>Pending</button></td>
-							</tr>
 						</table>
 					</div>
 					<div class="recents d-flex">
@@ -399,8 +378,24 @@
 				$.ajax({
 					url: "book/recentBookings",
 					type: "GET",
-					success: res => {
-						console.log(res);
+					success: data => {
+						console.log(data);
+						// data.forEach(element => {
+						// 	$(".recent-bookings").append(
+						// 		"<tr><td>" +
+						// 			this.firstname +
+						// 			this.lastName +
+						// 			"</td><td>" +
+						// 			this.email +
+						// 			"</td><td>" +
+						// 			this.eventCentre +
+						// 			"</td><td>" +
+						// 			this.reservationDate +
+						// 			"</td><td>" +
+						// 			"<button></button>" +
+						// 			"</td><tr>"
+						// 	);
+						// });
 					},
 					error: err => {
 						console.error(err);
