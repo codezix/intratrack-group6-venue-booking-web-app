@@ -2,11 +2,15 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const BookingSchema = new Schema({
-	eventCentre: String,
+	eventCentre: { type: String, trim: true, required: true },
 
-	startTime: { type: String, trim: true },
+	startTime: { type: String, trim: true, required: true },
 
-	endTime: { type: String, trim: true },
+	endTime: { type: String, trim: true, required: true },
+
+	startMin: { type: Number, required: true },
+
+	endMin: { type: Number, required: true },
 
 	reservationDate: {
 		type: String

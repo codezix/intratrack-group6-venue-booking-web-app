@@ -3,8 +3,10 @@ const router = express.Router();
 const secured = require("../lib/middleware/secured");
 const checkAdmin = require("../lib/middleware/checkAdmin");
 const Booking = require("../models/booking-model");
+const status = require("../lib/middleware/status");
+const Time = require("../functions/index");
 
-router.post("/postBooking", secured(), (req, res, next) => {
+router.post("/postBooking", status(), (req, res, next) => {
 	const {
 		firstName,
 		lastName,
@@ -15,85 +17,71 @@ router.post("/postBooking", secured(), (req, res, next) => {
 		endTime
 	} = req.body;
 
-	console.log(req.body);
-	console.log(req.body.reservationDate);
-
-	const newStartHr = getHour(startTime);
-	const newStartMin = getMin(startTime);
-	const newEndHr = getHour(endTime);
-	const newEndMin = getMin(endTime);
-
+	const startMin = Time.getTime(startTime);
+	const endMin = Time.getTime(endTime);
 	let dateTaken = false;
+
+	// console.log(startTime);
+	// console.log(startMin);
+	// console.log(endTime);
+	// console.log(endMin);
 
 	Booking.find({
 		$and: [{ reservationDate: reservationDate }, { eventCentre: eventCentre }]
-	}).then(bookings => {
-		if (bookings === []) {
-			new Booking({
-				email: req.user.email,
-				firstName,
-				lastName,
-				phone,
-				eventCentre: eventCentre,
-				reservationDate,
-				startTime,
-				endTime,
-				createdAt: new Date()
-			})
-				.save()
-				.then(() => {
-					res.status(200).send({
-						bookingResponse: `Booking made! We'll get in touch with you soon`
-					});
+	})
+		.then(bookings => {
+			if (!bookings.length) {
+				dateTaken = false;
+			} else {
+				bookings.forEach(booking => {
+					let existingStartMin = booking.startMin;
+					let existingEndMin = booking.endMin;
+					if (
+						startMin === existingStartMin ||
+						(startMin > existingStartMin && startMin < existingEndMin) ||
+						(endMin > existingStartMin && endMin < existingEndMin) ||
+						endMin === existingEndMin
+					) {
+						dateTaken = true;
+					}
 				});
-		} else {
-			bookings.forEach(booking => {
-				let existingStartHr = getHour(booking.startTime);
-				let existingStartMin = getMin(booking.startTime);
-
-				if (
-					newStartHr === existingStartHr &&
-					newStartMin === existingStartMin
-				) {
-					dateTaken = true;
-				}
-
-				if (newEndHr > existingStartHr && newStartHr <= existingStartHr) {
-					dateTaken = true;
-				}
-			});
-		}
-	});
-
-	if (dateTaken) {
-		res.send({
-			bookingResponse: `Oops! That slot is taken! Select a different date`
-		});
-	} else {
-		new Booking({
-			email: req.user.email,
-			firstName,
-			lastName,
-			phone,
-			eventCentre,
-			reservationDate,
-			startTime,
-			endTime,
-			createdAt: new Date()
+			}
 		})
-			.save()
-			.then(() => {
-				res.status(200).send({
-					bookingResponse: `Booking made! We'll get in touch with you soon`
+		.then(() => {
+			// console.log(dateTaken);
+
+			if (dateTaken) {
+				res.send({
+					bookingResponse: `Oops! That slot is taken! Select a different date/time`
 				});
-			});
-	}
+			} else {
+				new Booking({
+					email: req.user.email,
+					firstName,
+					lastName,
+					phone,
+					eventCentre: eventCentre,
+					reservationDate,
+					startTime,
+					endTime,
+					startMin,
+					endMin,
+					createdAt: new Date()
+				})
+					.save()
+					.then(() => {
+						res.status(200).send({
+							bookingResponse: `Booking made! We'll get in touch with you soon`
+						});
+					});
+			}
+		});
 });
 
 router.get("/recentBookings", checkAdmin(), (req, res, next) => {
 	Booking.find()
 		.sort({ _id: -1 })
-		.limit(3)
+		.limit(4)
 		.then(bookings => {
 			res.send({
 				recentBookings: bookings
