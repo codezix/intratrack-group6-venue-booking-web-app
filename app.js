@@ -14,7 +14,6 @@ const userInViews = require("./server/lib/middleware/userInViews");
 //Initiate our app
 dotenv.config();
 const app = express();
-const port = process.env.PORT || 4000;
 
 //set view engine
 app.set("view engine", "ejs");
@@ -76,6 +75,8 @@ app.use("/enq", enquireRouter);
 app.use("/book", bookRouter);
 app.use("/auth", authRouter);
 routes(app);
+
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
 	console.log(`server running on http://localhost:${port}`);
