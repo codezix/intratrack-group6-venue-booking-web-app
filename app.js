@@ -50,7 +50,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 //Configure Mongoose
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect(process.env.MONGODB_URI, {
 	useNewUrlParser: true,
 	useCreateIndex: true,
 	useUnifiedTopology: true
