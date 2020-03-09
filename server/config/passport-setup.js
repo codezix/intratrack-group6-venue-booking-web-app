@@ -12,7 +12,6 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser((id, done) => {
 	console.log("------------Deserializing----------");
-
 	User.findById(id).then(user => {
 		done(null, user);
 	});
@@ -40,27 +39,29 @@ const strategy = new Auth0Strategy(
 		}
 
 		//Find User or create New User in MongoDB
-		User.findOne({ authId: profile.id }).then(currentUser => {
-			if (currentUser) {
-				console.log(currentUser.email);
-				done(null, currentUser);
-			} else {
-				const userDetails = {
-					email: profile.displayName,
-					authId: profile.id
-					// username: profile.name
-				};
+		User.findOne({ authId: profile.id })
+			.then(currentUser => {
+				if (currentUser) {
+					console.log(currentUser.email);
+					done(null, currentUser);
+				} else {
+					const userDetails = {
+						email: profile.displayName,
+						authId: profile.id
+						// username: profile.name
+					};
 
-				if (role === "admin") {
-					userDetails.isAdmin = true;
+					if (role === "admin") {
+						userDetails.isAdmin = true;
+					}
+
+					new User(userDetails).save().then(newUser => {
+						console.log(newUser.email);
+						done(null, newUser);
+					});
 				}
-
-				new User(userDetails).save().then(newUser => {
-					console.log(newUser.email);
-					done(null, newUser);
-				});
-			}
-		});
+			})
+			.catch(err => console.error(err));
 	}
 );
 
