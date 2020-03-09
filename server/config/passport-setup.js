@@ -12,9 +12,11 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser((id, done) => {
 	console.log("------------Deserializing----------");
-	User.findById(id).then(user => {
-		done(null, user);
-	});
+	User.findById(id)
+		.then(user => {
+			done(null, user);
+		})
+		.catch(err => console.log(err));
 });
 
 const strategy = new Auth0Strategy(
