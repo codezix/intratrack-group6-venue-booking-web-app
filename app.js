@@ -71,9 +71,9 @@ app.use(session(sess));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(userInViews());
+app.use("/", authRouter);
 app.use("/enq", enquireRouter);
 app.use("/book", bookRouter);
-app.use("/auth", authRouter);
 routes(app);
 
 const port = process.env.PORT || 4000;
