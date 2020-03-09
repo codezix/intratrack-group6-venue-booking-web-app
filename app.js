@@ -1,4 +1,5 @@
 const express = require("express");
+const redis = require("redis");
 const session = require("express-session");
 const dotenv = require("dotenv");
 const cors = require("cors");
@@ -11,15 +12,17 @@ const bookRouter = require("./server/routes/booking");
 const enquireRouter = require("./server/routes/enquiry");
 const userInViews = require("./server/lib/middleware/userInViews");
 
-//Initiate our app
 dotenv.config();
 const app = express();
+const RedisStore = require("connect-redis")(session);
+const redisClient = redis.createClient();
 
 //set view engine
 app.set("view engine", "ejs");
 
 //express-session config
 const sess = {
+	store: new RedisStore({ client: redisClient }),
 	secret: process.env.SESSION_SECRET,
 	cookie: {},
 	resave: false,
