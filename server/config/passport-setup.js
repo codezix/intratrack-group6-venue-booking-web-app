@@ -32,6 +32,7 @@ const strategy = new Auth0Strategy(
 
 		//set default role to user
 		let role = "user";
+		console.log(profile._json);
 		//if role from auth0 is admin set role as admin
 		if (profile._json[`${process.env.namespaceid}/role`]) {
 			role = profile._json[`${process.env.namespaceid}/role`][0];

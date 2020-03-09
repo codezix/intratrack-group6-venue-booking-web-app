@@ -168,13 +168,13 @@
 									</li>
 									<% if (user) {%>
 									<li class="nav-item ">
-										<a class="nav-link" href="/logout" id="login"
+										<a class="nav-link" href="/auth/logout" id="login"
 											>Logout, <span id="user"><%= locals.user.email%></span></a
 										>
 									</li>
 									<%} else{%>
 									<li class="nav-item ">
-										<a class="nav-link" href="/login" id="login">Login</a>
+										<a class="nav-link" href="/auth/login" id="login">Login</a>
 									</li>
 									<%}%>
 								</ul>
