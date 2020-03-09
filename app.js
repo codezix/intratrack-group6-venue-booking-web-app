@@ -73,7 +73,7 @@ app.use(passport.session());
 app.use(userInViews());
 app.use("/enq", enquireRouter);
 app.use("/book", bookRouter);
-app.use("/auth", authRouter);
+app.use("/", authRouter);
 routes(app);
 
 const port = process.env.PORT || 4000;
