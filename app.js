@@ -32,7 +32,7 @@ if (app.get("env") === "production") {
 	// Uncomment the line below if your application is behind a proxy (like on Heroku)
 	// or if you're encountering the error message:
 	// "Unable to verify authorization request state"
-	// app.set('trust proxy', 1);
+	app.set("trust proxy", 1);
 }
 
 /**
@@ -70,9 +70,9 @@ app.use(session(sess));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(userInViews());
+app.use("/", authRouter);
 app.use("/enq", enquireRouter);
 app.use("/book", bookRouter);
-app.use("/", authRouter);
 routes(app);
 
 const port = process.env.PORT || 4000;
