@@ -11,10 +11,8 @@ const bookRouter = require("./server/routes/booking");
 const enquireRouter = require("./server/routes/enquiry");
 const userInViews = require("./server/lib/middleware/userInViews");
 
-//Initiate our app
 dotenv.config();
 const app = express();
-const port = process.env.PORT || 4000;
 
 //set view engine
 app.set("view engine", "ejs");
@@ -34,7 +32,7 @@ if (app.get("env") === "production") {
 	// Uncomment the line below if your application is behind a proxy (like on Heroku)
 	// or if you're encountering the error message:
 	// "Unable to verify authorization request state"
-	// app.set('trust proxy', 1);
+	app.set("trust proxy", 1);
 }
 
 /**
@@ -51,7 +49,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 //Configure Mongoose
-mongoose.connect(process.env.DB_URL, {
+mongoose.connect(process.env.MONGODB_URI, {
 	useNewUrlParser: true,
 	useCreateIndex: true,
 	useUnifiedTopology: true
@@ -72,10 +70,12 @@ app.use(session(sess));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(userInViews());
+app.use("/", authRouter);
 app.use("/enq", enquireRouter);
 app.use("/book", bookRouter);
-app.use("/auth", authRouter);
 routes(app);
+
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
 	console.log(`server running on http://localhost:${port}`);
